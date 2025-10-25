@@ -1,0 +1,407 @@
+/* Profile Page */
+.profile-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.connect-prompt {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.connect-prompt .prompt-icon {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.connect-prompt h2 {
+  font-size: 2.5rem;
+  color: #a855f7;
+  margin-bottom: 1rem;
+}
+
+.connect-prompt p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+}
+
+/* Profile Header */
+.profile-header {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a855f7, #ec4899, #a855f7, transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.profile-avatar {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar-gradient {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.4);
+}
+
+.avatar-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 3px solid #a855f7;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.wallet-address {
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.profile-stats-quick {
+  display: flex;
+  gap: 3rem;
+}
+
+.quick-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quick-stat .stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #a855f7;
+}
+
+.quick-stat .stat-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* Stats Overview */
+.stats-overview {
+  margin-bottom: 3rem;
+}
+
+.stats-overview h2 {
+  font-size: 2rem;
+  color: #a855f7;
+  margin-bottom: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: #a855f7;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(168, 85, 247, 0.1);
+  border-radius: 12px;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-card .stat-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.stat-card .stat-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* Achievements */
+.achievements-section {
+  margin-bottom: 3rem;
+}
+
+.achievements-section h2 {
+  font-size: 2rem;
+  color: #a855f7;
+  margin-bottom: 2rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.achievement-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card.locked {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.achievement-card.unlocked {
+  border-color: #22c55e;
+}
+
+.achievement-card.unlocked::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+  animation: achievementShine 2s ease-in-out;
+}
+
+@keyframes achievementShine {
+  to { left: 100%; }
+}
+
+.achievement-icon {
+  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(168, 85, 247, 0.1);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.achievement-info {
+  flex: 1;
+}
+
+.achievement-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.achievement-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.unlock-badge {
+  width: 30px;
+  height: 30px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Activity Section */
+.activity-section {
+  margin-bottom: 3rem;
+}
+
+.activity-section h2 {
+  font-size: 2rem;
+  color: #a855f7;
+  margin-bottom: 2rem;
+}
+
+.activity-list {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+  transition: all 0.2s ease;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-item:hover {
+  background: rgba(168, 85, 247, 0.05);
+}
+
+.activity-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.activity-icon.bet-won {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid #22c55e;
+}
+
+.activity-icon.bet-lost {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #ef4444;
+}
+
+.activity-icon.bet-pending {
+  background: rgba(255, 193, 7, 0.2);
+  border: 1px solid #ffc107;
+}
+
+.activity-icon.achievement {
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid #a855f7;
+}
+
+.activity-details {
+  flex: 1;
+}
+
+.activity-title {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.activity-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.activity-time {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .profile-stats-quick {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-item {
+    flex-wrap: wrap;
+  }
+
+  .activity-time {
+    width: 100%;
+    text-align: right;
+  }
+}

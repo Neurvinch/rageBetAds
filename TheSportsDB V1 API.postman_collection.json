@@ -1,0 +1,2790 @@
+{
+	"info": {
+		"_postman_id": "6ac20323-9e34-454e-8c1d-fa803af4447f",
+		"name": "TheSportsDB V1 API",
+		"description": "This API allows you to search for sports data, analytics, schedules, social media links and fan artwork. It returns detailed information including its leagues, teams, stadiums, players and listings. TheSportsDB is a user contribution site where anyone can sign up to add or edit our data.\n\nContact Support: [https://www.thesportsdb.com/documentation](https://www.thesportsdb.com/documentation)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39558820",
+		"_collection_link": "https://www.postman.com/thedatadb/thesportsdb/collection/0t5rbv8/thesportsdb-v1-api?source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "searchvenues.php",
+					"item": [
+						{
+							"name": "Search Venues",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/searchvenues.php?v=Wembley",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"searchvenues.php"
+									],
+									"query": [
+										{
+											"key": "v",
+											"value": "Wembley",
+											"description": "(Required) Venue's name."
+										}
+									]
+								},
+								"description": "Search any venue by its name or alternate name."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/searchvenues.php?v=Wembley",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"searchvenues.php"
+											],
+											"query": [
+												{
+													"key": "v",
+													"value": "Wembley",
+													"description": "(Required) Venue's name."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"venues\": [\n    {\n      \"idVenue\": \"19835\",\n      \"idDupe\": null,\n      \"strVenue\": \"Wembley Arena\",\n      \"strVenueAlternate\": \"OVO Arena\",\n      \"strVenueSponsor\": \"\",\n      \"strSport\": \"Multi Sports\",\n      \"strDescriptionEN\": \"Wembley Arena /ˈwɛmbli/ (originally the Empire Pool and, since 1 July 2014, currently known as The SSE Arena, Wembley for sponsorship reasons) is an indoor arena adjacent to Wembley Stadium in Wembley, London. Used for music, comedy, family entertainment and sport, the 12,500-seat facility is London's second-largest indoor arena after The O2 Arena, and the ninth-largest (as of August 2019) in the United Kingdom.\",\n      \"strArchitect\": \"\",\n      \"intCapacity\": \"12500\",\n      \"strCost\": \"\",\n      \"strCountry\": \"United Kingdom\",\n      \"strLocation\": \"London, United Kingdom\",\n      \"strTimezone\": \"UTC +00:00 Greenwich Mean Time (GMT)\",\n      \"intFormedYear\": \"1934\",\n      \"strFanart1\": \"https://www.thesportsdb.com/images/media/venue/fanart/24e8f71719762252.jpg\",\n      \"strFanart2\": \"https://www.thesportsdb.com/images/media/venue/fanart/lkn9dh1719762259.jpg\",\n      \"strFanart3\": \"https://www.thesportsdb.com/images/media/venue/fanart/gp5zka1719762263.jpg\",\n      \"strFanart4\": \"https://www.thesportsdb.com/images/media/venue/fanart/irh2vk1719762267.jpg\",\n      \"strThumb\": \"https://www.thesportsdb.com/images/media/venue/thumb/0cn2ky1719762176.jpg\",\n      \"strLogo\": \"https://www.thesportsdb.com/images/media/venue/logo/las2x21719762081.png\",\n      \"strMap\": \"51°33′29″N 0°16′59″W\",\n      \"strWebsite\": \"ovoarena.co.uk\",\n      \"strFacebook\": \"\",\n      \"strInstagram\": \"\",\n      \"strTwitter\": \"\",\n      \"strYoutube\": \"\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "searchteams.php",
+					"item": [
+						{
+							"name": "Search Teams",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/searchteams.php?t=Arsenal",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"searchteams.php"
+									],
+									"query": [
+										{
+											"key": "t",
+											"value": "Arsenal",
+											"description": "(Required) Team's main or alternate name."
+										}
+									]
+								},
+								"description": "Search for any sports team by it's main or alternate name."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/searchteams.php?t=Arsenal",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"searchteams.php"
+											],
+											"query": [
+												{
+													"key": "t",
+													"value": "Arsenal",
+													"description": "(Required) Team's main or alternate name."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"teams\": [\n    {\n      \"idTeam\": \"133604\",\n      \"idESPN\": \"359\",\n      \"idAPIfootball\": \"42\",\n      \"intLoved\": \"8\",\n      \"strTeam\": \"Arsenal\",\n      \"strTeamAlternate\": \"Arsenal Football Club, AFC, Arsenal FC\",\n      \"strTeamShort\": \"ARS\",\n      \"intFormedYear\": \"1892\",\n      \"strSport\": \"Soccer\",\n      \"strLeague\": \"English Premier League\",\n      \"idLeague\": \"4328\",\n      \"strLeague2\": \"FA Cup\",\n      \"idLeague2\": \"4482\",\n      \"strLeague3\": \"EFL Cup\",\n      \"idLeague3\": \"4570\",\n      \"strLeague4\": \"UEFA Champions League\",\n      \"idLeague4\": \"4480\",\n      \"strLeague5\": \"\",\n      \"idLeague5\": null,\n      \"strLeague6\": \"\",\n      \"idLeague6\": null,\n      \"strLeague7\": \"\",\n      \"idLeague7\": null,\n      \"strDivision\": null,\n      \"idVenue\": \"15528\",\n      \"strStadium\": \"Emirates Stadium\",\n      \"strKeywords\": \"Gunners, Gooners\",\n      \"strRSS\": \"\",\n      \"strLocation\": \"Holloway, London, England\",\n      \"intStadiumCapacity\": \"60338\",\n      \"strWebsite\": \"www.arsenal.com\",\n      \"strFacebook\": \"www.facebook.com/Arsenal\",\n      \"strTwitter\": \"twitter.com/arsenal\",\n      \"strInstagram\": \"instagram.com/arsenal\",\n      \"strDescriptionEN\": \"Arsenal Football Club is a professional football club based in Islington, London, England, that plays in the Premier League, the top flight of English football. The club has won 13 League titles, a record 13 FA Cups, 2 League Cups, 15 FA Community Shields, 1 League Centenary Trophy, 1 UEFA Cup Winners' Cup and 1 Inter-Cities Fairs Cup.\\r\\n\\r\\nArsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division, and have won the second-most top-flight matches in English football history. In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position.\\r\\n\\r\\nHerbert Chapman won Arsenal's first national trophies, but died prematurely. He helped introduce the WM formation, floodlights, and shirt numbers, and added the white sleeves and brighter red to the club's kit. Arsène Wenger was the longest-serving manager and won the most trophies. He won a record 7 FA Cups, and his title-winning team set an English record for the longest top-flight unbeaten league run at 49 games between 2003 and 2004, receiving the nickname The Invincibles.\\r\\n\\r\\nIn 1886, Woolwich munitions workers founded the club as Dial Square. In 1913, the club crossed the city to Arsenal Stadium in Highbury, becoming close neighbours of Tottenham Hotspur, and creating the North London derby. In 2006, they moved to the nearby Emirates Stadium. In terms of revenue, Arsenal is the ninth highest-earning football club in the world, earned €487.6m in 2016–17 season. Based on social media activity from 2014 to 2015, Arsenal's fanbase is the fifth largest in the world. In 2018, Forbes estimated the club was the third most valuable in England, with the club being worth $2.24 billion.\",\n      \"strDescriptionDE\": \"Der FC Arsenal (offiziell: Arsenal Football Club) – auch bekannt als (The) Arsenal, (The) Gunners (deutsche Übersetzung: „Schützen“ oder „Kanoniere“) oder im deutschen Sprachraum auch Arsenal London genannt – ist ein 1886 gegründeter Fußballverein aus dem Ortsteil Holloway des Nordlondoner Bezirks Islington. Mit 13 englischen Meisterschaften und elf FA-Pokalsiegen zählt der Klub zu den erfolgreichsten englischen Fußballvereinen.Erst über 40 Jahre nach der Gründung gewann Arsenal mit fünf Ligatiteln und zwei FA Cups in den 1930er Jahren seine ersten bedeutenden Titel. Der nächste Meilenstein war in der Saison 1970/71 der Gewinn des zweiten englischen „Doubles“ im 20. Jahrhundert. In den vergangenen 20 Jahren etablierte sich Arsenal endgültig als einer der erfolgreichsten englischen Fußballvereine, und beim Gewinn zweier weiterer Doubles zu Beginn des 21. Jahrhunderts blieb die Mannschaft in der Ligasaison 2003/04 als zweite in der englischen Fußballgeschichte ungeschlagen. Zunehmende europäische Ambitionen unterstrich der Verein in der Spielzeit 2005/06, als Arsenal als erster Londoner Verein das Finale der Champions League erreichte.\",\n      \"strDescriptionFR\": \"Arsenal Football Club est un club de football anglais fondé le 1er décembre 1886 à Londres. Son siège est situé dans le borough londonien d'Islington.\\r\\n\\r\\nArsenal participe au championnat d'Angleterre de football depuis 1919 dont il a remporté treize éditions, ce qui en fait le troisième club le plus titré d'Angleterre, ainsi que treize coupes d'Angleterre ce qui constitue un record (devant Manchester United, qui en a remporté 12). Sur le plan continental, les Gunners (en français : « les canonniers ») comptent à leur palmarès une Coupe d'Europe des vainqueurs de coupe obtenue en 1994. Deux fois finalistes de cette coupe des vainqueurs de coupe en 1980 et 1995, ils ont également atteint les finales de la coupe de l'UEFA en 2000, de la Ligue des champions en 2006 et de l'Europa League en 2019.\\r\\n\\r\\nRésident dès 1913 du stade de Highbury, situé dans un quartier du nord de Londres, le club s’est installé en 2006 dans une nouvelle enceinte de 60 355 places : l'Emirates Stadium, situé à Ashburton Grove. Arsenal nourrit une certaine rivalité avec les nombreux autres clubs de la capitale, mais celle l'opposant à Tottenham Hotspur, avec qui il dispute chaque année le « North London derby » est particulièrement ancienne et profonde.\\r\\n\\r\\nLe club est dirigé par Chips Keswick (en) qui succède pour raisons de santé en juin 2013 à Peter Hill-Wood, fils et petit-fils des anciens présidents Denis et Samuel Hill-Wood. Il remplace son père à la mort de ce dernier, en 1982, après vingt ans de responsabilités. Son entraîneur depuis le 29 novembre 2019 est le Suédois Fredrik Ljungberg, ancien joueur du club, après le limogeage de l’Espagnol Unai Emery. Cependant le 20 décembre 2019, l'Espagnol Mikel Arteta, lui aussi ancien joueur du club, est nommé entraîneur. Il était avant sa nomination l'assistant de Pep Guardiola à Manchester City\",\n      \"strDescriptionCN\": null,\n      \"strDescriptionIT\": \"L'Arsenal Football Club, noto semplicemente come Arsenal, è una società calcistica inglese con sede a Londra, più precisamente nel quartiere di Holloway, nel borgo di Islington.[3]\\r\\n\\r\\nFondato nel 1886, è uno dei quattordici club che rappresentano la città di Londra a livello professionistico,[4] nonché uno dei più antichi del Paese. Milita nella massima serie del calcio inglese ininterrottamente dal 1919-1920, risultando quindi la squadra da più tempo presente in First Division/Premier League. È la prima squadra della capitale del Regno Unito per successi sportivi e, in ambito federale, la terza dopo Manchester United e Liverpool, essendosi aggiudicata nel corso della sua storia tredici campionati inglesi, dodici FA Cup (record di vittorie, condiviso con il Manchester United), due League Cup e quattordici Community Shield (una condivisa),[5] mentre in ambito internazionale ha conquistato una Coppa delle Coppe ed una Coppa delle Fiere. Inoltre è una delle tredici squadre che hanno raggiunto le finali di tutte le tre principali competizioni gestite dalla UEFA: Champions League (2005-2006), Coppa UEFA (1999-2000) e Coppa delle Coppe (1979-1980, 1993-1994 e 1994-1995).[6]\\r\\n\\r\\nI colori sociali, rosso per la maglietta e bianco per i pantaloncini, hanno subìto variazioni più o meno evidenti nel corso degli anni. Anche la sede del club è stata cambiata più volte: inizialmente la squadra giocava a Woolwich, ma nel 1913 si spostò all'Arsenal Stadium, nel quartiere di Highbury; dal 2006 disputa invece le sue partite casalinghe nel nuovo Emirates Stadium. Lo stemma è stato modificato ripetutamente, ma al suo interno è sempre comparso almeno un cannone. Proprio per questo motivo i giocatori ed i tifosi dell'Arsenal sono spesso soprannominati Gunners (in italiano \\\"cannonieri\\\").\\r\\n\\r\\nL'Arsenal conta su una schiera di tifosi molto nutrita, distribuita in ogni parte del mondo. Nel corso degli anni sono sorte profonde rivalità con i sostenitori di club concittadini, la più sentita delle quali è quella con i seguaci del Tottenham Hotspur, con i quali i Gunners giocano regolarmente il North London derby.[7] L'Arsenal è anche uno dei club più ricchi del mondo, con un patrimonio stimato di 1,3 miliardi di dollari, secondo la rivista Forbes nel 2014, facendone il quinto club più ricco del pianeta e il secondo in Inghilterra.[8]\",\n      \"strDescriptionJP\": \"アーセナル・フットボール・クラブ（Arsenal Football Club、イギリス英語発音: [ˈɑːsənl ˈfutˌbɔːl klʌb]）は、イングランドの首都ロンドン北部をホームタウンとする、イングランドプロサッカーリーグ（プレミアリーグ）に加盟するプロサッカークラブ。クラブカラーは赤と白。\\r\\n\\r\\n現在のホームスタジアムはロンドンのエミレーツ・スタジアム（収容人数60,260人）。プレミアリーグに所属し、同リーグにおいて3回の優勝記録を持つ（フットボールリーグ時代を含めると13回）。2003-2004シーズンには無敗優勝を達成したイングランド屈指の強豪である。1886年に軍需工場の労働者のクラブとして創設されたため、チームのエンブレムは大砲のマークを持つ。「ガナーズ（Gunners）」の愛称で知られ[1]、サポーターは「グーナー（Gooner）」と呼ばれる。\\r\\n\\r\\nクラブのモットーは「勝利は調和の中から生まれる（ラテン語: Victoria Concordia Crescit）」。1949年から使用されたクレストに初めて登場する。現行のクレストは2002年から使用されており、大砲の上にサンセリフ体でチーム名が書かれている。\",\n      \"strDescriptionRU\": \"«Арсена́л» (официальное полное название — Футбольный клуб «Арсенал», англ. Arsenal Football Club, английское произношение: [ˈɑrsənəl 'futbɔ:l klʌb]) — английский профессиональный футбольный клуб из Северного Лондона, выступающий в Премьер-лиге. Основан в октябре 1886 года. Клуб 13 раз становился чемпионом Англии, 13 раз выигрывал Кубок Англии. Домашним стадионом клуба является Эмирейтс, вмещающий 60 704 зрителей[1].\\r\\n\\r\\n«Арсенал» провёл бо́льшую часть своей истории в высшем дивизионе английского футбола, в 1892 году стал одним из клубов-основателей английской Премьер-лиги[4]. Также клуб является рекордсменом по количеству сезонов подряд, проведённых в высшем дивизионе чемпионата Англии, начиная с 1919 года[5].\\r\\n\\r\\nПо данным Forbes на 2018 год, «Арсенал» занимал шестое место в списке самых дорогих футбольных клубов мира и оценивался в сумму 2,238 млрд. долларов США[6]. По данным аудиторской компании Deloitte, по итогам сезона 2016/17 «Арсенал» занимал 6-ю строчку в рейтинге самых доходных футбольных клубов с доходом в размере 487,6 млн евро[7].\",\n      \"strDescriptionES\": \"El Arsenal Football Club (pronunciación en inglés: /ˈɑː(ɹ)sənəl ˈfʊtˌbɔl klʌb/) es un club de fútbol profesional con sede en Holloway, Londres, Inglaterra, que juega en la máxima categoría del fútbol de ese país, la Premier League. Uno de los más laureados del fútbol inglés, ha ganado 43 títulos en su país, incluyendo 13 campeonatos de liga y un récord de 13 Copas de Inglaterra; también ha ganado dos títulos internacionales: la Copa europea de Ferias en 1970 y la Recopa de Europa en 1994.\\r\\n\\r\\nFundado en 1886 en el sudeste de Londres, en 1893, se convirtió en el primer club del sur de Inglaterra en unirse a la Football League. Ganó sus primeros títulos —cinco ligas y dos FA Cups— en los años 1930. Luego de un período de escasez en los años posteriores a la Segunda Guerra Mundial, se convirtió en el segundo club del siglo XX en ganar el doblete, obteniendo el Campeonato de Liga y la FA Cup de la temporada 1970-71. Los logros siguieron en los años 1990 y 2000. Durante esos años, Arsenal ganó un doblete de copas nacionales, dos dobletes de Liga y Copa, y dos bicampeonatos de la Copa de Inglaterra. Finalizó una temporada de Liga invicto y se convirtió en el primer club de Londres en llegar a la final de la Liga de Campeones de la UEFA.\\r\\n\\r\\nLos colores tradicionales del club, el blanco y el rojo, han evolucionado con el tiempo. Del mismo modo, fue cambiando la ubicación del club; fundado en el distrito de Woolwich, en el sureste de Londres, en 1913 se mudó al norte de Londres, más exactamente en el distrito de Highbury, donde fue establecido el Arsenal Stadium, que funcionó hasta 2006, donde se hizo un traslado más corto, hacia los alrededores de Holloway, donde se levantó el actual Emirates Stadium. La estadía histórica del Arsenal en el norte de Londres, ha creado con el tiempo una fuerte rivalidad con el Tottenham Hotspur, conocida como el Derbi del Norte de Londres.4​\\r\\n\\r\\nArsenal posee una de las aficiones más numerosas del mundo.5​6​7​ Según la revista Forbes, el club fue el quinto club más valioso del mundo en 2014, con un valor de 1300 millones libras.8​\",\n      \"strDescriptionPT\": \"Arsenal Football Club é um clube de futebol, fundado e baseado em Londres, capital da Inglaterra.\\r\\n\\r\\nO clube disputa a Premier League e é um dos mais bem sucedidos do futebol inglês, tendo ganhado por 13 vezes o título de campeão do Campeonato Inglês, sendo o terceiro em número de conquistas, e por 13 vezes a Copa da Inglaterra (recorde), sendo também detentor do recorde de maior período de invencibilidade no Campeonato Inglês e também o de ser o único a ganhar a Premier League invicto. No plano internacional, conquistou a Recopa Europeia e a Taça das Cidades com Feiras, já tendo sido finalista da Liga dos Campeões da UEFA, a principal competição europeia de clubes.\\r\\n\\r\\nO Arsenal mudou de localização ao longo do tempo, tendo sido fundado em Woolwich, sudeste de Londres, em 1913 mudou-se para o norte de Londres, para o Arsenal Stadium, em Highbury. Em 2006 foi concluída a construção do Emirates Stadium, que está localizado nas proximidades de Holloway, o que foi prometido desde 2004, após o clube fechar negócio com a Emirates Airlines, tendo capacidade para mais de 60.000 expectadores.[3]\\r\\n\\r\\nO Arsenal tem muitos torcedores por todo mundo, possuindo uma série de rivalidades de longa data com outros clubes, sendo a mais notável delas contra os vizinhos do Tottenham, com quem disputa regularmente o North London Derby, bastante intensas também contra o Chelsea e o Manchester United.[4]\\r\\n\\r\\nSuas cores têm sido tradicionalmente vermelho e branco, mas seus uniformes evoluíram ao longo da história. Um outro grande feito é o de ser um dos 5 únicos clubes do mundo que já venceram a Seleção Brasileira.[5] Já o Arsenal Ladies, é um dos clubes mais bem sucedidos do futebol feminino na Inglaterra.\",\n      \"strDescriptionSE\": null,\n      \"strDescriptionNL\": null,\n      \"strDescriptionHU\": null,\n      \"strDescriptionNO\": \"Arsenal Football Club er en engelsk fotballklubb som spiller i Premier League. Klubben ble stiftet i 1886, og ble valgt inn i The Football League i 1893. «The Gunners», som er kallenavnet til Arsenal, spiller hjemmekampene sine på Emirates Stadium i Holloway. Holloway er et sted i bydelen Islington som ligger i det nordlige London.\",\n      \"strDescriptionIL\": null,\n      \"strDescriptionPL\": null,\n      \"strColour1\": \"#EF0107\",\n      \"strColour2\": \"#fbffff\",\n      \"strColour3\": \"#013373\",\n      \"strGender\": \"Male\",\n      \"strCountry\": \"England\",\n      \"strBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/uyhbfe1612467038.png\",\n      \"strLogo\": \"https://r2.thesportsdb.com/images/media/team/logo/q2mxlz1512644512.png\",\n      \"strFanart1\": \"https://r2.thesportsdb.com/images/media/team/fanart/qqm9rn1731313837.jpg\",\n      \"strFanart2\": \"https://r2.thesportsdb.com/images/media/team/fanart/lk3che1731313857.jpg\",\n      \"strFanart3\": \"https://r2.thesportsdb.com/images/media/team/fanart/ddmaih1731313886.jpg\",\n      \"strFanart4\": \"https://r2.thesportsdb.com/images/media/team/fanart/2uvo8p1731313907.jpg\",\n      \"strBanner\": \"https://r2.thesportsdb.com/images/media/team/banner/24sngv1718273065.jpg\",\n      \"strEquipment\": \"https://r2.thesportsdb.com/images/media/team/equipment/wohyr81730135385.png\",\n      \"strYoutube\": \"www.youtube.com/user/ArsenalTour\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "searchevents.php",
+					"item": [
+						{
+							"name": "Search Events",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/searchevents.php?e=Arsenal_vs_Chelsea&s=2016-2017&d=2015-04-26&f=English_Premier_League_2015-04-26_Arsenal_vs_Chelsea",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"searchevents.php"
+									],
+									"query": [
+										{
+											"key": "e",
+											"value": "Arsenal_vs_Chelsea",
+											"description": "(Required) Event's title."
+										},
+										{
+											"key": "s",
+											"value": "2016-2017",
+											"description": "Season of the event."
+										},
+										{
+											"key": "d",
+											"value": "2015-04-26",
+											"description": "Date of the event."
+										},
+										{
+											"key": "f",
+											"value": "English_Premier_League_2015-04-26_Arsenal_vs_Chelsea",
+											"description": "Filename of the event."
+										}
+									]
+								},
+								"description": "Search for any sports event by it's title with extra filters for season, date or filename."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/searchevents.php?e=Arsenal_vs_Chelsea&s=2016-2017&d=2015-04-26&f=English_Premier_League_2015-04-26_Arsenal_vs_Chelsea",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"searchevents.php"
+											],
+											"query": [
+												{
+													"key": "e",
+													"value": "Arsenal_vs_Chelsea",
+													"description": "(Required) Event's title."
+												},
+												{
+													"key": "s",
+													"value": "2016-2017",
+													"description": "Season of the event."
+												},
+												{
+													"key": "d",
+													"value": "2015-04-26",
+													"description": "Date of the event."
+												},
+												{
+													"key": "f",
+													"value": "English_Premier_League_2015-04-26_Arsenal_vs_Chelsea",
+													"description": "Filename of the event."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"679698\",\n      \"idAPIfootball\": \"1035454\",\n      \"strEvent\": \"Arsenal vs Chelsea\",\n      \"strEventAlternate\": \"Chelsea @ Arsenal\",\n      \"strFilename\": \"FA Cup 2017-05-27 Arsenal vs Chelsea\",\n      \"strSport\": \"Soccer\",\n      \"idLeague\": \"4482\",\n      \"strLeague\": \"FA Cup\",\n      \"strLeagueBadge\": \"https://r2.thesportsdb.com/images/media/league/badge/vk7isd1598802862.png\",\n      \"strSeason\": \"2016-2017\",\n      \"strDescriptionEN\": \"\",\n      \"strHomeTeam\": \"Arsenal\",\n      \"strAwayTeam\": \"Chelsea\",\n      \"intHomeScore\": \"2\",\n      \"intRound\": \"200\",\n      \"intAwayScore\": \"1\",\n      \"intSpectators\": \"89472\",\n      \"strOfficial\": \"\",\n      \"strTimestamp\": \"2024-04-23T19:00:00\",\n      \"dateEvent\": \"2017-05-27\",\n      \"dateEventLocal\": \"2017-05-27\",\n      \"strTime\": \"17:30:00\",\n      \"strTimeLocal\": \"\",\n      \"strGroup\": \"\",\n      \"idHomeTeam\": \"133604\",\n      \"strHomeTeamBadge\": null,\n      \"idAwayTeam\": \"133610\",\n      \"strAwayTeamBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/yvwvtu1448813215.png\",\n      \"intScore\": null,\n      \"intScoreVotes\": null,\n      \"strResult\": \"\",\n      \"idVenue\": null,\n      \"strVenue\": null,\n      \"strCountry\": null,\n      \"strCity\": null,\n      \"strPoster\": null,\n      \"strSquare\": null,\n      \"strFanart\": null,\n      \"strThumb\": null,\n      \"strBanner\": null,\n      \"strMap\": null,\n      \"strTweet1\": \"\",\n      \"strTweet2\": \"\",\n      \"strTweet3\": \"\",\n      \"strVideo\": \"https://www.youtube.com/watch?v=OOkzIJ2Ge2M\",\n      \"strStatus\": null,\n      \"strPostponed\": \"no\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "searchplayers.php",
+					"item": [
+						{
+							"name": "Search Players",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/searchplayers.php?p=Danny_Welbeck",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"searchplayers.php"
+									],
+									"query": [
+										{
+											"key": "p",
+											"value": "Danny_Welbeck",
+											"description": "(Required) Player's name."
+										}
+									]
+								},
+								"description": "Search for any sports person by their main or alternate name."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/searchplayers.php?p=Danny_Welbeck",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"searchplayers.php"
+											],
+											"query": [
+												{
+													"key": "p",
+													"value": "Danny_Welbeck",
+													"description": "(Required) Player's name."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"players\": [\n    {\n      \"idPlayer\": \"34145395\",\n      \"idTeam\": \"133604\",\n      \"strPlayer\": \"Danny Welbeck\",\n      \"strTeam\": \"Arsenal\",\n      \"strSport\": \"Soccer\",\n      \"strThumb\": \"https://www.thesportsdb.com/images/media/player/thumb/82uics1544986067.jpg\",\n      \"strCutout\": \"https://www.thesportsdb.com/images/media/player/cutout/pr0quu1725369088.png\",\n      \"strPosition\": \"Centre-Forward\",\n      \"strNationality\": \"England\",\n      \"dateBorn\": \"1990-11-26\",\n      \"strStatus\": \"Active\",\n      \"strGender\": \"Male\",\n      \"relevance\": \"29.700151443481445\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Lookup",
+			"item": [
+				{
+					"name": "lookupvenue.php",
+					"item": [
+						{
+							"name": "Lookup Venue",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookupvenue.php?id=16163",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookupvenue.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "16163",
+											"description": "(Required) Unique identifier for the venue."
+										}
+									]
+								},
+								"description": "Get information about a specific venue by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookupvenue.php?id=16163",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookupvenue.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "16163",
+													"description": "(Required) Unique identifier for the venue."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"venues\": [\n    {\n      \"idVenue\": \"19835\",\n      \"idDupe\": null,\n      \"strVenue\": \"Wembley Arena\",\n      \"strVenueAlternate\": \"OVO Arena\",\n      \"strVenueSponsor\": \"\",\n      \"strSport\": \"Multi Sports\",\n      \"strDescriptionEN\": \"Wembley Arena /ˈwɛmbli/ (originally the Empire Pool and, since 1 July 2014, currently known as The SSE Arena, Wembley for sponsorship reasons) is an indoor arena adjacent to Wembley Stadium in Wembley, London. Used for music, comedy, family entertainment and sport, the 12,500-seat facility is London's second-largest indoor arena after The O2 Arena, and the ninth-largest (as of August 2019) in the United Kingdom.\",\n      \"strArchitect\": \"\",\n      \"intCapacity\": \"12500\",\n      \"strCost\": \"\",\n      \"strCountry\": \"United Kingdom\",\n      \"strLocation\": \"London, United Kingdom\",\n      \"strTimezone\": \"UTC +00:00 Greenwich Mean Time (GMT)\",\n      \"intFormedYear\": \"1934\",\n      \"strFanart1\": \"https://www.thesportsdb.com/images/media/venue/fanart/24e8f71719762252.jpg\",\n      \"strFanart2\": \"https://www.thesportsdb.com/images/media/venue/fanart/lkn9dh1719762259.jpg\",\n      \"strFanart3\": \"https://www.thesportsdb.com/images/media/venue/fanart/gp5zka1719762263.jpg\",\n      \"strFanart4\": \"https://www.thesportsdb.com/images/media/venue/fanart/irh2vk1719762267.jpg\",\n      \"strThumb\": \"https://www.thesportsdb.com/images/media/venue/thumb/0cn2ky1719762176.jpg\",\n      \"strLogo\": \"https://www.thesportsdb.com/images/media/venue/logo/las2x21719762081.png\",\n      \"strMap\": \"51°33′29″N 0°16′59″W\",\n      \"strWebsite\": \"ovoarena.co.uk\",\n      \"strFacebook\": \"\",\n      \"strInstagram\": \"\",\n      \"strTwitter\": \"\",\n      \"strYoutube\": \"\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookupeventstats.php",
+					"item": [
+						{
+							"name": "Lookup Event Stats",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookupeventstats.php?id=1032723",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookupeventstats.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1032723",
+											"description": "(Required) Unique identifier for the event."
+										}
+									]
+								},
+								"description": "Get statistics for a specific event by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookupeventstats.php?id=1032723",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookupeventstats.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1032723",
+													"description": "(Required) Unique identifier for the event."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"eventstats\": [\n    {\n      \"idStatistic\": \"17\",\n      \"idEvent\": \"1032723\",\n      \"idApiFootball\": \"592172\",\n      \"strEvent\": \"Aston Villa vs Liverpool\",\n      \"strStat\": \"Shots on Goal\",\n      \"intHome\": \"11\",\n      \"intAway\": \"8\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookuptv.php",
+					"item": [
+						{
+							"name": "Lookup TV",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookuptv.php?id=584911",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookuptv.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "584911",
+											"description": "(Required) Unique identifier for the event."
+										}
+									]
+								},
+								"description": "Get information about TV broadcasts for a specific event by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookuptv.php?id=584911",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookuptv.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "584911",
+													"description": "(Required) Unique identifier for the event."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"tvevent\": [\n    {\n      \"id\": \"4867\",\n      \"idEvent\": \"584911\",\n      \"intDivision\": null,\n      \"strSport\": \"Motorsport\",\n      \"strEvent\": \"Marrakesh E-Prix\",\n      \"strEventThumb\": null,\n      \"strEventPoster\": null,\n      \"strEventBanner\": null,\n      \"strEventSquare\": null,\n      \"idChannel\": \"8165\",\n      \"strCountry\": \"Ireland\",\n      \"strEventCountry\": null,\n      \"strLogo\": \"https://r2.thesportsdb.com/images/media/channel/logo/xstwys1438373796.png\",\n      \"strChannel\": \"BT Sport ESPN HD\",\n      \"strSeason\": \"1819\",\n      \"strTime\": \"16:00:00\",\n      \"dateEvent\": \"2019-01-12\",\n      \"strTimeStamp\": null\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookuptimeline.php",
+					"item": [
+						{
+							"name": "Lookup Timeline",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookuptimeline.php?id=1032718",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookuptimeline.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1032718",
+											"description": "(Required) Unique identifier for the event."
+										}
+									]
+								},
+								"description": "Get information about the timeline of a specific event by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookuptimeline.php?id=1032718",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookuptimeline.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1032718",
+													"description": "(Required) Unique identifier for the event."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"timeline\": [\n    {\n      \"idTimeline\": \"871243\",\n      \"idEvent\": \"1032718\",\n      \"strTimeline\": \"Card\",\n      \"strTimelineDetail\": \"Yellow Card\",\n      \"strHome\": \"No\",\n      \"strEvent\": \"Sheffield United vs Leeds\",\n      \"idAPIfootball\": \"592167\",\n      \"idPlayer\": \"34147877\",\n      \"strPlayer\": \"Kalvin Phillips\",\n      \"strCountry\": null,\n      \"idAssist\": \"34149736\",\n      \"strAssist\": \"\",\n      \"intTime\": \"6\",\n      \"idTeam\": \"133635\",\n      \"strTeam\": \"Leeds\",\n      \"strComment\": \"\",\n      \"dateEvent\": \"2020-09-27\",\n      \"strSeason\": \"2020-2021\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookuplineup.php",
+					"item": [
+						{
+							"name": "Lookup Lineup",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookuplineup.php?id=1032723",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookuplineup.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1032723",
+											"description": "(Required) Unique identifier for the event."
+										}
+									]
+								},
+								"description": "Get information about the lineup of a specific event by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookuplineup.php?id=1032723",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookuplineup.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1032723",
+													"description": "(Required) Unique identifier for the event."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"lineup\": [\n    {\n      \"idLineup\": \"533\",\n      \"idEvent\": \"1032723\",\n      \"strPosition\": \"Midfielder\",\n      \"strHome\": \"Yes\",\n      \"strSubstitute\": \"No\",\n      \"intSquadNumber\": \"2\",\n      \"idPlayer\": \"34161548\",\n      \"strPlayer\": \"Matty Cash\",\n      \"idTeam\": \"133601\",\n      \"strTeam\": \"Aston Villa\",\n      \"strCutout\": \"https://www.thesportsdb.com/images/media/player/cutout/cs0q7d1694201422.png\",\n      \"strThumb\": \"https://www.thesportsdb.com/images/media/player/thumb/457swz1508161435.jpg\",\n      \"strRender\": \"https://www.thesportsdb.com/images/media/player/render/nqmmfh1735982338.png\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookupevent.php",
+					"item": [
+						{
+							"name": "Lookup Event",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookupevent.php?id=123456",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookupevent.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "123456",
+											"description": "(Required) Unique identifier for the event."
+										}
+									]
+								},
+								"description": "Get information about a specific event by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookupevent.php?id=123456",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookupevent.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "123456",
+													"description": "(Required) Unique identifier for the event."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"event\": [\n    {\n      \"idEvent\": \"679698\",\n      \"idAPIfootball\": \"1035454\",\n      \"strEvent\": \"Arsenal vs Chelsea\",\n      \"strEventAlternate\": \"Chelsea @ Arsenal\",\n      \"strFilename\": \"FA Cup 2017-05-27 Arsenal vs Chelsea\",\n      \"strSport\": \"Soccer\",\n      \"idLeague\": \"4482\",\n      \"strLeague\": \"FA Cup\",\n      \"strLeagueBadge\": \"https://r2.thesportsdb.com/images/media/league/badge/vk7isd1598802862.png\",\n      \"strSeason\": \"2016-2017\",\n      \"strDescriptionEN\": \"\",\n      \"strHomeTeam\": \"Arsenal\",\n      \"strAwayTeam\": \"Chelsea\",\n      \"intHomeScore\": \"2\",\n      \"intRound\": \"200\",\n      \"intAwayScore\": \"1\",\n      \"intSpectators\": \"89472\",\n      \"strOfficial\": \"\",\n      \"strTimestamp\": \"2024-04-23T19:00:00\",\n      \"dateEvent\": \"2017-05-27\",\n      \"dateEventLocal\": \"2017-05-27\",\n      \"strTime\": \"17:30:00\",\n      \"strTimeLocal\": \"\",\n      \"strGroup\": \"\",\n      \"idHomeTeam\": \"133604\",\n      \"strHomeTeamBadge\": null,\n      \"idAwayTeam\": \"133610\",\n      \"strAwayTeamBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/yvwvtu1448813215.png\",\n      \"intScore\": null,\n      \"intScoreVotes\": null,\n      \"strResult\": \"\",\n      \"idVenue\": null,\n      \"strVenue\": null,\n      \"strCountry\": null,\n      \"strCity\": null,\n      \"strPoster\": null,\n      \"strSquare\": null,\n      \"strFanart\": null,\n      \"strThumb\": null,\n      \"strBanner\": null,\n      \"strMap\": null,\n      \"strTweet1\": \"\",\n      \"strTweet2\": \"\",\n      \"strTweet3\": \"\",\n      \"strVideo\": \"https://www.youtube.com/watch?v=OOkzIJ2Ge2M\",\n      \"strStatus\": null,\n      \"strPostponed\": \"no\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookupcontracts.php",
+					"item": [
+						{
+							"name": "Lookup Contracts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookupcontracts.php?id=34145937",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookupcontracts.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "34145937",
+											"description": "(Required) Unique identifier for the player."
+										}
+									]
+								},
+								"description": "Get information about contracts of a player by their unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookupcontracts.php?id=34145937",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookupcontracts.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "34145937",
+													"description": "(Required) Unique identifier for the player."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"contracts\": [\n    {\n      \"id\": \"112\",\n      \"idPlayer\": \"34147178\",\n      \"idTeam\": \"134281\",\n      \"strSport\": \"Soccer\",\n      \"strPlayer\": \"Edenilson\",\n      \"strTeam\": \"Internacional\",\n      \"strBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/yprvxx1473538097.png\",\n      \"strYearStart\": \"2018\",\n      \"strYearEnd\": \"2021\",\n      \"strWage\": \"\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookupmilestones.php",
+					"item": [
+						{
+							"name": "Lookup Milestones",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookupmilestones.php?id=34145937",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookupmilestones.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "34145937",
+											"description": "(Required) Unique identifier for the player."
+										}
+									]
+								},
+								"description": "Get information about milestones of a player by their unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookupmilestones.php?id=34145937",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookupmilestones.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "34145937",
+													"description": "(Required) Unique identifier for the player."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"milestones\": [\n    {\n      \"id\": \"455\",\n      \"idPlayer\": \"34161397\",\n      \"strPlayer\": \"Richarlison\",\n      \"idTeam\": \"133616\",\n      \"idMilestone\": \"1745\",\n      \"strTeam\": \"Tottenham\",\n      \"strSport\": \"Soccer\",\n      \"strMilestone\": \"UEFA Champions League Player Of The Match\",\n      \"strMilestoneLogo\": \"https://www.thesportsdb.com/images/media/milestone/logo/6230tq1662537994.png\",\n      \"dateMilestone\": \"2022-09-07\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookupformerteams.php",
+					"item": [
+						{
+							"name": "Lookup Former Teams",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookupformerteams.php?id=34145937",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookupformerteams.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "34145937",
+											"description": "(Required) Unique identifier for the player."
+										}
+									]
+								},
+								"description": "Get information about former teams of a player by their unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookupformerteams.php?id=34145937",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookupformerteams.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "34145937",
+													"description": "(Required) Unique identifier for the player."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"formerteams\": [\n    {\n      \"id\": \"11819\",\n      \"idPlayer\": \"34147178\",\n      \"idFormerTeam\": \"134284\",\n      \"strSport\": \"Soccer\",\n      \"strPlayer\": \"Edenilson\",\n      \"strFormerTeam\": \"Corinthians\",\n      \"strMoveType\": \"Permanent\",\n      \"strBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/vvuvps1473538042.png\",\n      \"strJoined\": \"2011\",\n      \"strDeparted\": \"2014\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookuphonours.php",
+					"item": [
+						{
+							"name": "Lookup Honours",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookuphonours.php?id=133604",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookuphonours.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "133604",
+											"description": "(Required) Unique identifier for the honour."
+										}
+									]
+								},
+								"description": "Get information about a specific honour by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookuphonours.php?id=133604",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookuphonours.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "133604",
+													"description": "(Required) Unique identifier for the honour."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"honours\": [\n    {\n      \"id\": \"11211\",\n      \"idPlayer\": \"34147178\",\n      \"idTeam\": \"134284\",\n      \"idLeague\": \"4351\",\n      \"idHonour\": \"749\",\n      \"strSport\": \"Soccer\",\n      \"strPlayer\": \"Edenilson\",\n      \"strTeam\": \"Corinthians\",\n      \"strTeamBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/vvuvps1473538042.png\",\n      \"strHonour\": \"Brazilian Brasileirao\",\n      \"strHonourLogo\": \"https://www.thesportsdb.com/images/media/honour/logo/mxhjar1650460067.png\",\n      \"strHonourTrophy\": \"https://www.thesportsdb.com/images/media/honour/trophy/xzspl21650460217.png\",\n      \"strSeason\": \"2011\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookupplayer.php",
+					"item": [
+						{
+							"name": "Lookup Player",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookupplayer.php?id=341459",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookupplayer.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "341459",
+											"description": "(Required) Unique identifier for the player."
+										}
+									]
+								},
+								"description": "Get information about a specific player by their unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookupplayer.php?id=341459",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookupplayer.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "341459",
+													"description": "(Required) Unique identifier for the player."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"players\": [\n    {\n      \"idPlayer\": \"34145937\",\n      \"idTeam\": \"133675\",\n      \"idTeam2\": null,\n      \"idTeamNational\": null,\n      \"idAPIfootball\": \"1917\",\n      \"idPlayerManager\": \"43001238\",\n      \"idWikidata\": \"Q129700\",\n      \"idTransferMkt\": \"45146\",\n      \"idESPN\": \"100681\",\n      \"strNationality\": \"Italy\",\n      \"strPlayer\": \"Mario Balotelli\",\n      \"strPlayerAlternate\": \"Mario Barwuah Balotelli\",\n      \"strTeam\": \"Genoa\",\n      \"strTeam2\": \"\",\n      \"strSport\": \"Soccer\",\n      \"intSoccerXMLTeamID\": \"6\",\n      \"dateBorn\": \"1990-08-12\",\n      \"dateDied\": null,\n      \"strNumber\": \"45\",\n      \"dateSigned\": \"2014-08-25\",\n      \"strSigning\": \"\",\n      \"strWage\": \"\",\n      \"strOutfitter\": \"\",\n      \"strKit\": \"\",\n      \"strAgent\": \"\",\n      \"strBirthLocation\": \"Palermo, Italy\",\n      \"strEthnicity\": \"Black\",\n      \"strStatus\": \"Active\",\n      \"strDescriptionEN\": \"Mario Balotelli Barwuah (Italian pronunciation: ; né Barwuah; born 12 August 1990) is an Italian professional footballer who plays as a striker for Serie A club Genoa.\\r\\n\\r\\nBalotelli started his professional football career in 2005 at Lumezzane, before joining Inter Milan in 2007. He won the treble (Serie A, Coppa Italia, and Champions League) in 2010. Balotelli reunited with Internazionale manager Roberto Mancini at Manchester City in 2010, helping them win a Premier League title and FA Cup. He moved back to Italy in January 2013, signing for Inter's rival club, AC Milan, before returning to the Premier League with Liverpool 18 months later. Following a return to Milan on loan, Balotelli departed to France, playing for Nice and Marseille in Ligue 1. He returned to Italy a third time, joining Serie A club Brescia in summer 2019, and Serie B club Monza in late 2020. The following summer, Balotelli signed for Turkish club Adana Demirspor.\\r\\n\\r\\nBalotelli earned his first cap for Italy in a friendly match against the Ivory Coast in 2010. He amassed over 30 caps and represented his country at UEFA Euro 2012, the 2013 FIFA Confederations Cup, and the 2014 FIFA World Cup. He helped the national side reach the final of Euro 2012, scoring twice against Germany in the semi-finals, and won bronze at the Confederations Cup. Balotelli is Italy's joint-top scorer in the UEFA European Championship, and joint-top scorer in the Confederations Cup.\\r\\n\\r\\nRegarded as a highly promising player in his youth, Balotelli is a versatile forward with strength, pace and an eye for goal. He is a penalty kick specialist. Despite his talent, Balotelli has been criticised for his poor attitude on and off the pitch.\",\n      \"strDescriptionDE\": null,\n      \"strDescriptionFR\": null,\n      \"strDescriptionCN\": null,\n      \"strDescriptionIT\": null,\n      \"strDescriptionJP\": null,\n      \"strDescriptionRU\": null,\n      \"strDescriptionES\": null,\n      \"strDescriptionPT\": null,\n      \"strDescriptionSE\": null,\n      \"strDescriptionNL\": null,\n      \"strDescriptionHU\": null,\n      \"strDescriptionNO\": null,\n      \"strDescriptionIL\": null,\n      \"strDescriptionPL\": null,\n      \"strGender\": \"Male\",\n      \"strSide\": \"Right\",\n      \"strPosition\": \"Centre-Forward\",\n      \"strCollege\": null,\n      \"strFacebook\": \"www.facebook.com/MarioOfficialBalotelli\",\n      \"strWebsite\": \"\",\n      \"strTwitter\": \"twitter.com/finallymario\",\n      \"strInstagram\": \"instagram.com/mb459\",\n      \"strYoutube\": \"\",\n      \"strHeight\": \"189 cm\",\n      \"strWeight\": \"192 lbs\",\n      \"intLoved\": \"0\",\n      \"strThumb\": \"https://www.thesportsdb.com/images/media/player/thumb/k3sczt1714571705.jpg\",\n      \"strPoster\": null,\n      \"strCutout\": \"https://www.thesportsdb.com/images/media/player/cutout/alfgb41610666098.png\",\n      \"strRender\": \"https://www.thesportsdb.com/images/media/player/render/sz8mu61654253818.png\",\n      \"strBanner\": null,\n      \"strFanart1\": \"https://www.thesportsdb.com/images/media/player/fanart/wwtsqs1431622222.jpg\",\n      \"strFanart2\": \"https://www.thesportsdb.com/images/media/player/fanart/upxsxy1431622235.jpg\",\n      \"strFanart3\": \"https://www.thesportsdb.com/images/media/player/fanart/vxqsyv1431622253.jpg\",\n      \"strFanart4\": \"https://www.thesportsdb.com/images/media/player/fanart/tvxuyq1431622269.jpg\",\n      \"strCreativeCommons\": \"Yes\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookupequipment.php",
+					"item": [
+						{
+							"name": "Lookup Equipment",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookupequipment.php?id=133604",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookupequipment.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "133604",
+											"description": "(Required) Unique identifier for the equipment."
+										}
+									]
+								},
+								"description": "Get information about a specific equipment by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookupequipment.php?id=133604",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookupequipment.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "133604",
+													"description": "(Required) Unique identifier for the equipment."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"equipment\": [\n    {\n      \"idEquipment\": \"612\",\n      \"idTeam\": \"133597\",\n      \"date\": \"2019-08-16 13:22:58\",\n      \"strSeason\": \"2019-2020\",\n      \"strEquipment\": \"https://r2.thesportsdb.com/images/media/team/equipment/2019-133597-Jersey.png\",\n      \"strType\": \"1st\",\n      \"strUsername\": \"string\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookuptable.php",
+					"item": [
+						{
+							"name": "Lookup Table",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookuptable.php?l=4328&s=2020-2021",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookuptable.php"
+									],
+									"query": [
+										{
+											"key": "l",
+											"value": "4328",
+											"description": "(Required) Unique identifier for the table."
+										},
+										{
+											"key": "s",
+											"value": "2020-2021",
+											"description": "Season of the table."
+										}
+									]
+								},
+								"description": "Get information about a specific table by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookuptable.php?l=4328&s=2020-2021",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookuptable.php"
+											],
+											"query": [
+												{
+													"key": "l",
+													"value": "4328",
+													"description": "(Required) Unique identifier for the table."
+												},
+												{
+													"key": "s",
+													"value": "2020-2021",
+													"description": "Season of the table."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"tables\": [\n    {\n      \"idStanding\": \"5678958\",\n      \"intRank\": \"1\",\n      \"idTeam\": \"133602\",\n      \"strTeam\": \"Liverpool\",\n      \"strBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/kfaher1737969724.png/tiny\",\n      \"idLeague\": \"4328\",\n      \"strLeague\": \"English Premier League\",\n      \"strSeason\": \"2024-2025\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookupteam.php",
+					"item": [
+						{
+							"name": "Lookup Team",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookupteam.php?id=133604",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookupteam.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "133604",
+											"description": "(Required) Unique identifier for the team."
+										}
+									]
+								},
+								"description": "Get information about a specific team by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookupteam.php?id=133604",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookupteam.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "133604",
+													"description": "(Required) Unique identifier for the team."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"teams\": [\n    {\n      \"idTeam\": \"133604\",\n      \"idESPN\": \"359\",\n      \"idAPIfootball\": \"42\",\n      \"intLoved\": \"8\",\n      \"strTeam\": \"Arsenal\",\n      \"strTeamAlternate\": \"Arsenal Football Club, AFC, Arsenal FC\",\n      \"strTeamShort\": \"ARS\",\n      \"intFormedYear\": \"1892\",\n      \"strSport\": \"Soccer\",\n      \"strLeague\": \"English Premier League\",\n      \"idLeague\": \"4328\",\n      \"strLeague2\": \"FA Cup\",\n      \"idLeague2\": \"4482\",\n      \"strLeague3\": \"EFL Cup\",\n      \"idLeague3\": \"4570\",\n      \"strLeague4\": \"UEFA Champions League\",\n      \"idLeague4\": \"4480\",\n      \"strLeague5\": \"\",\n      \"idLeague5\": null,\n      \"strLeague6\": \"\",\n      \"idLeague6\": null,\n      \"strLeague7\": \"\",\n      \"idLeague7\": null,\n      \"strDivision\": null,\n      \"idVenue\": \"15528\",\n      \"strStadium\": \"Emirates Stadium\",\n      \"strKeywords\": \"Gunners, Gooners\",\n      \"strRSS\": \"\",\n      \"strLocation\": \"Holloway, London, England\",\n      \"intStadiumCapacity\": \"60338\",\n      \"strWebsite\": \"www.arsenal.com\",\n      \"strFacebook\": \"www.facebook.com/Arsenal\",\n      \"strTwitter\": \"twitter.com/arsenal\",\n      \"strInstagram\": \"instagram.com/arsenal\",\n      \"strDescriptionEN\": \"Arsenal Football Club is a professional football club based in Islington, London, England, that plays in the Premier League, the top flight of English football. The club has won 13 League titles, a record 13 FA Cups, 2 League Cups, 15 FA Community Shields, 1 League Centenary Trophy, 1 UEFA Cup Winners' Cup and 1 Inter-Cities Fairs Cup.\\r\\n\\r\\nArsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division, and have won the second-most top-flight matches in English football history. In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position.\\r\\n\\r\\nHerbert Chapman won Arsenal's first national trophies, but died prematurely. He helped introduce the WM formation, floodlights, and shirt numbers, and added the white sleeves and brighter red to the club's kit. Arsène Wenger was the longest-serving manager and won the most trophies. He won a record 7 FA Cups, and his title-winning team set an English record for the longest top-flight unbeaten league run at 49 games between 2003 and 2004, receiving the nickname The Invincibles.\\r\\n\\r\\nIn 1886, Woolwich munitions workers founded the club as Dial Square. In 1913, the club crossed the city to Arsenal Stadium in Highbury, becoming close neighbours of Tottenham Hotspur, and creating the North London derby. In 2006, they moved to the nearby Emirates Stadium. In terms of revenue, Arsenal is the ninth highest-earning football club in the world, earned €487.6m in 2016–17 season. Based on social media activity from 2014 to 2015, Arsenal's fanbase is the fifth largest in the world. In 2018, Forbes estimated the club was the third most valuable in England, with the club being worth $2.24 billion.\",\n      \"strDescriptionDE\": \"Der FC Arsenal (offiziell: Arsenal Football Club) – auch bekannt als (The) Arsenal, (The) Gunners (deutsche Übersetzung: „Schützen“ oder „Kanoniere“) oder im deutschen Sprachraum auch Arsenal London genannt – ist ein 1886 gegründeter Fußballverein aus dem Ortsteil Holloway des Nordlondoner Bezirks Islington. Mit 13 englischen Meisterschaften und elf FA-Pokalsiegen zählt der Klub zu den erfolgreichsten englischen Fußballvereinen.Erst über 40 Jahre nach der Gründung gewann Arsenal mit fünf Ligatiteln und zwei FA Cups in den 1930er Jahren seine ersten bedeutenden Titel. Der nächste Meilenstein war in der Saison 1970/71 der Gewinn des zweiten englischen „Doubles“ im 20. Jahrhundert. In den vergangenen 20 Jahren etablierte sich Arsenal endgültig als einer der erfolgreichsten englischen Fußballvereine, und beim Gewinn zweier weiterer Doubles zu Beginn des 21. Jahrhunderts blieb die Mannschaft in der Ligasaison 2003/04 als zweite in der englischen Fußballgeschichte ungeschlagen. Zunehmende europäische Ambitionen unterstrich der Verein in der Spielzeit 2005/06, als Arsenal als erster Londoner Verein das Finale der Champions League erreichte.\",\n      \"strDescriptionFR\": \"Arsenal Football Club est un club de football anglais fondé le 1er décembre 1886 à Londres. Son siège est situé dans le borough londonien d'Islington.\\r\\n\\r\\nArsenal participe au championnat d'Angleterre de football depuis 1919 dont il a remporté treize éditions, ce qui en fait le troisième club le plus titré d'Angleterre, ainsi que treize coupes d'Angleterre ce qui constitue un record (devant Manchester United, qui en a remporté 12). Sur le plan continental, les Gunners (en français : « les canonniers ») comptent à leur palmarès une Coupe d'Europe des vainqueurs de coupe obtenue en 1994. Deux fois finalistes de cette coupe des vainqueurs de coupe en 1980 et 1995, ils ont également atteint les finales de la coupe de l'UEFA en 2000, de la Ligue des champions en 2006 et de l'Europa League en 2019.\\r\\n\\r\\nRésident dès 1913 du stade de Highbury, situé dans un quartier du nord de Londres, le club s’est installé en 2006 dans une nouvelle enceinte de 60 355 places : l'Emirates Stadium, situé à Ashburton Grove. Arsenal nourrit une certaine rivalité avec les nombreux autres clubs de la capitale, mais celle l'opposant à Tottenham Hotspur, avec qui il dispute chaque année le « North London derby » est particulièrement ancienne et profonde.\\r\\n\\r\\nLe club est dirigé par Chips Keswick (en) qui succède pour raisons de santé en juin 2013 à Peter Hill-Wood, fils et petit-fils des anciens présidents Denis et Samuel Hill-Wood. Il remplace son père à la mort de ce dernier, en 1982, après vingt ans de responsabilités. Son entraîneur depuis le 29 novembre 2019 est le Suédois Fredrik Ljungberg, ancien joueur du club, après le limogeage de l’Espagnol Unai Emery. Cependant le 20 décembre 2019, l'Espagnol Mikel Arteta, lui aussi ancien joueur du club, est nommé entraîneur. Il était avant sa nomination l'assistant de Pep Guardiola à Manchester City\",\n      \"strDescriptionCN\": null,\n      \"strDescriptionIT\": \"L'Arsenal Football Club, noto semplicemente come Arsenal, è una società calcistica inglese con sede a Londra, più precisamente nel quartiere di Holloway, nel borgo di Islington.[3]\\r\\n\\r\\nFondato nel 1886, è uno dei quattordici club che rappresentano la città di Londra a livello professionistico,[4] nonché uno dei più antichi del Paese. Milita nella massima serie del calcio inglese ininterrottamente dal 1919-1920, risultando quindi la squadra da più tempo presente in First Division/Premier League. È la prima squadra della capitale del Regno Unito per successi sportivi e, in ambito federale, la terza dopo Manchester United e Liverpool, essendosi aggiudicata nel corso della sua storia tredici campionati inglesi, dodici FA Cup (record di vittorie, condiviso con il Manchester United), due League Cup e quattordici Community Shield (una condivisa),[5] mentre in ambito internazionale ha conquistato una Coppa delle Coppe ed una Coppa delle Fiere. Inoltre è una delle tredici squadre che hanno raggiunto le finali di tutte le tre principali competizioni gestite dalla UEFA: Champions League (2005-2006), Coppa UEFA (1999-2000) e Coppa delle Coppe (1979-1980, 1993-1994 e 1994-1995).[6]\\r\\n\\r\\nI colori sociali, rosso per la maglietta e bianco per i pantaloncini, hanno subìto variazioni più o meno evidenti nel corso degli anni. Anche la sede del club è stata cambiata più volte: inizialmente la squadra giocava a Woolwich, ma nel 1913 si spostò all'Arsenal Stadium, nel quartiere di Highbury; dal 2006 disputa invece le sue partite casalinghe nel nuovo Emirates Stadium. Lo stemma è stato modificato ripetutamente, ma al suo interno è sempre comparso almeno un cannone. Proprio per questo motivo i giocatori ed i tifosi dell'Arsenal sono spesso soprannominati Gunners (in italiano \\\"cannonieri\\\").\\r\\n\\r\\nL'Arsenal conta su una schiera di tifosi molto nutrita, distribuita in ogni parte del mondo. Nel corso degli anni sono sorte profonde rivalità con i sostenitori di club concittadini, la più sentita delle quali è quella con i seguaci del Tottenham Hotspur, con i quali i Gunners giocano regolarmente il North London derby.[7] L'Arsenal è anche uno dei club più ricchi del mondo, con un patrimonio stimato di 1,3 miliardi di dollari, secondo la rivista Forbes nel 2014, facendone il quinto club più ricco del pianeta e il secondo in Inghilterra.[8]\",\n      \"strDescriptionJP\": \"アーセナル・フットボール・クラブ（Arsenal Football Club、イギリス英語発音: [ˈɑːsənl ˈfutˌbɔːl klʌb]）は、イングランドの首都ロンドン北部をホームタウンとする、イングランドプロサッカーリーグ（プレミアリーグ）に加盟するプロサッカークラブ。クラブカラーは赤と白。\\r\\n\\r\\n現在のホームスタジアムはロンドンのエミレーツ・スタジアム（収容人数60,260人）。プレミアリーグに所属し、同リーグにおいて3回の優勝記録を持つ（フットボールリーグ時代を含めると13回）。2003-2004シーズンには無敗優勝を達成したイングランド屈指の強豪である。1886年に軍需工場の労働者のクラブとして創設されたため、チームのエンブレムは大砲のマークを持つ。「ガナーズ（Gunners）」の愛称で知られ[1]、サポーターは「グーナー（Gooner）」と呼ばれる。\\r\\n\\r\\nクラブのモットーは「勝利は調和の中から生まれる（ラテン語: Victoria Concordia Crescit）」。1949年から使用されたクレストに初めて登場する。現行のクレストは2002年から使用されており、大砲の上にサンセリフ体でチーム名が書かれている。\",\n      \"strDescriptionRU\": \"«Арсена́л» (официальное полное название — Футбольный клуб «Арсенал», англ. Arsenal Football Club, английское произношение: [ˈɑrsənəl 'futbɔ:l klʌb]) — английский профессиональный футбольный клуб из Северного Лондона, выступающий в Премьер-лиге. Основан в октябре 1886 года. Клуб 13 раз становился чемпионом Англии, 13 раз выигрывал Кубок Англии. Домашним стадионом клуба является Эмирейтс, вмещающий 60 704 зрителей[1].\\r\\n\\r\\n«Арсенал» провёл бо́льшую часть своей истории в высшем дивизионе английского футбола, в 1892 году стал одним из клубов-основателей английской Премьер-лиги[4]. Также клуб является рекордсменом по количеству сезонов подряд, проведённых в высшем дивизионе чемпионата Англии, начиная с 1919 года[5].\\r\\n\\r\\nПо данным Forbes на 2018 год, «Арсенал» занимал шестое место в списке самых дорогих футбольных клубов мира и оценивался в сумму 2,238 млрд. долларов США[6]. По данным аудиторской компании Deloitte, по итогам сезона 2016/17 «Арсенал» занимал 6-ю строчку в рейтинге самых доходных футбольных клубов с доходом в размере 487,6 млн евро[7].\",\n      \"strDescriptionES\": \"El Arsenal Football Club (pronunciación en inglés: /ˈɑː(ɹ)sənəl ˈfʊtˌbɔl klʌb/) es un club de fútbol profesional con sede en Holloway, Londres, Inglaterra, que juega en la máxima categoría del fútbol de ese país, la Premier League. Uno de los más laureados del fútbol inglés, ha ganado 43 títulos en su país, incluyendo 13 campeonatos de liga y un récord de 13 Copas de Inglaterra; también ha ganado dos títulos internacionales: la Copa europea de Ferias en 1970 y la Recopa de Europa en 1994.\\r\\n\\r\\nFundado en 1886 en el sudeste de Londres, en 1893, se convirtió en el primer club del sur de Inglaterra en unirse a la Football League. Ganó sus primeros títulos —cinco ligas y dos FA Cups— en los años 1930. Luego de un período de escasez en los años posteriores a la Segunda Guerra Mundial, se convirtió en el segundo club del siglo XX en ganar el doblete, obteniendo el Campeonato de Liga y la FA Cup de la temporada 1970-71. Los logros siguieron en los años 1990 y 2000. Durante esos años, Arsenal ganó un doblete de copas nacionales, dos dobletes de Liga y Copa, y dos bicampeonatos de la Copa de Inglaterra. Finalizó una temporada de Liga invicto y se convirtió en el primer club de Londres en llegar a la final de la Liga de Campeones de la UEFA.\\r\\n\\r\\nLos colores tradicionales del club, el blanco y el rojo, han evolucionado con el tiempo. Del mismo modo, fue cambiando la ubicación del club; fundado en el distrito de Woolwich, en el sureste de Londres, en 1913 se mudó al norte de Londres, más exactamente en el distrito de Highbury, donde fue establecido el Arsenal Stadium, que funcionó hasta 2006, donde se hizo un traslado más corto, hacia los alrededores de Holloway, donde se levantó el actual Emirates Stadium. La estadía histórica del Arsenal en el norte de Londres, ha creado con el tiempo una fuerte rivalidad con el Tottenham Hotspur, conocida como el Derbi del Norte de Londres.4​\\r\\n\\r\\nArsenal posee una de las aficiones más numerosas del mundo.5​6​7​ Según la revista Forbes, el club fue el quinto club más valioso del mundo en 2014, con un valor de 1300 millones libras.8​\",\n      \"strDescriptionPT\": \"Arsenal Football Club é um clube de futebol, fundado e baseado em Londres, capital da Inglaterra.\\r\\n\\r\\nO clube disputa a Premier League e é um dos mais bem sucedidos do futebol inglês, tendo ganhado por 13 vezes o título de campeão do Campeonato Inglês, sendo o terceiro em número de conquistas, e por 13 vezes a Copa da Inglaterra (recorde), sendo também detentor do recorde de maior período de invencibilidade no Campeonato Inglês e também o de ser o único a ganhar a Premier League invicto. No plano internacional, conquistou a Recopa Europeia e a Taça das Cidades com Feiras, já tendo sido finalista da Liga dos Campeões da UEFA, a principal competição europeia de clubes.\\r\\n\\r\\nO Arsenal mudou de localização ao longo do tempo, tendo sido fundado em Woolwich, sudeste de Londres, em 1913 mudou-se para o norte de Londres, para o Arsenal Stadium, em Highbury. Em 2006 foi concluída a construção do Emirates Stadium, que está localizado nas proximidades de Holloway, o que foi prometido desde 2004, após o clube fechar negócio com a Emirates Airlines, tendo capacidade para mais de 60.000 expectadores.[3]\\r\\n\\r\\nO Arsenal tem muitos torcedores por todo mundo, possuindo uma série de rivalidades de longa data com outros clubes, sendo a mais notável delas contra os vizinhos do Tottenham, com quem disputa regularmente o North London Derby, bastante intensas também contra o Chelsea e o Manchester United.[4]\\r\\n\\r\\nSuas cores têm sido tradicionalmente vermelho e branco, mas seus uniformes evoluíram ao longo da história. Um outro grande feito é o de ser um dos 5 únicos clubes do mundo que já venceram a Seleção Brasileira.[5] Já o Arsenal Ladies, é um dos clubes mais bem sucedidos do futebol feminino na Inglaterra.\",\n      \"strDescriptionSE\": null,\n      \"strDescriptionNL\": null,\n      \"strDescriptionHU\": null,\n      \"strDescriptionNO\": \"Arsenal Football Club er en engelsk fotballklubb som spiller i Premier League. Klubben ble stiftet i 1886, og ble valgt inn i The Football League i 1893. «The Gunners», som er kallenavnet til Arsenal, spiller hjemmekampene sine på Emirates Stadium i Holloway. Holloway er et sted i bydelen Islington som ligger i det nordlige London.\",\n      \"strDescriptionIL\": null,\n      \"strDescriptionPL\": null,\n      \"strColour1\": \"#EF0107\",\n      \"strColour2\": \"#fbffff\",\n      \"strColour3\": \"#013373\",\n      \"strGender\": \"Male\",\n      \"strCountry\": \"England\",\n      \"strBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/uyhbfe1612467038.png\",\n      \"strLogo\": \"https://r2.thesportsdb.com/images/media/team/logo/q2mxlz1512644512.png\",\n      \"strFanart1\": \"https://r2.thesportsdb.com/images/media/team/fanart/qqm9rn1731313837.jpg\",\n      \"strFanart2\": \"https://r2.thesportsdb.com/images/media/team/fanart/lk3che1731313857.jpg\",\n      \"strFanart3\": \"https://r2.thesportsdb.com/images/media/team/fanart/ddmaih1731313886.jpg\",\n      \"strFanart4\": \"https://r2.thesportsdb.com/images/media/team/fanart/2uvo8p1731313907.jpg\",\n      \"strBanner\": \"https://r2.thesportsdb.com/images/media/team/banner/24sngv1718273065.jpg\",\n      \"strEquipment\": \"https://r2.thesportsdb.com/images/media/team/equipment/wohyr81730135385.png\",\n      \"strYoutube\": \"www.youtube.com/user/ArsenalTour\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookupleague.php",
+					"item": [
+						{
+							"name": "Lookup League",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookupleague.php?id=4328",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookupleague.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4328",
+											"description": "(Required) Unique identifier for the league."
+										}
+									]
+								},
+								"description": "Get information about a specific league by its unique identifier."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookupleague.php?id=4328",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookupleague.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4328",
+													"description": "(Required) Unique identifier for the league."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"leagues\": [\n    {\n      \"idLeague\": \"4396\",\n      \"idSoccerXML\": null,\n      \"idAPIfootball\": \"6335\",\n      \"strSport\": \"Soccer\",\n      \"strLeague\": \"English League 1\",\n      \"strLeagueAlternate\": \"League One, Sky Bet League One\",\n      \"intDivision\": \"3\",\n      \"idCup\": \"0\",\n      \"strCurrentSeason\": \"2024-2025\",\n      \"intFormedYear\": \"2004\",\n      \"dateFirstEvent\": \"2012-08-17\",\n      \"strGender\": \"Male\",\n      \"strCountry\": \"England\",\n      \"strWebsite\": \"www.efl.com/competitions/efl-league-one\",\n      \"strFacebook\": \"www.facebook.com/footballleague\",\n      \"strInstagram\": \"\",\n      \"strTwitter\": \"twitter.com/EFL\",\n      \"strYoutube\": \"\",\n      \"strRSS\": \"\",\n      \"strDescriptionEN\": \"Football League One (often referred to as League One for short or Sky Bet League 1) is the second-highest division of the Football League and the third tier in the English football league system.\\r\\n\\r\\nFootball League One was introduced for the 2004–05 season. It was previously known as the Football League Second Division and prior to the advent of the Premier League, the Football League Third Division.\\r\\n\\r\\nAt present (2014–15 season), Oldham Athletic hold the longest tenure in League One, last being out of the division in the 1996–97 season when they were relegated from the Championship. There are currently six former Premier League clubs competing in the League One, namely Barnsley, Bradford City, Coventry City, Oldham Athletic, Sheffield United and Swindon Town.\\r\\nThere are 24 clubs in Football League One. Each club plays every other club twice (once at home and once away). Three points are awarded for a win, one for a draw and zero for a loss. At the end of the season a table of the final League standings is determined, based on the following criteria in this order: points obtained, goal difference, goals scored, an aggregate of the results between two or more clubs (ranked using the previous three criteria) and, finally, a series of one or more play-off matches.\\r\\n\\r\\nAt the end of each season the top two clubs, together with the winner of the play-offs between the clubs which finished in 3rd–6th position, are promoted to Football League Championship and are replaced by the three clubs that finished at the bottom of that division.\\r\\n\\r\\nSimilarly, the four clubs that finished at the bottom of Football League One are relegated to Football League Two and are replaced by the top three clubs and the club that won the 4th–7th place play-offs in that division.\\r\\nSky Sports currently show live League One matches with highlights shown on BBC One on their programme called The Football League Show, which also broadcasts highlights of Football League Championship and Football League Two matches. The show is available on the red button the following Sunday until midday and is available on iPlayer all the following week. Highlights of all games in the Football League are also available to view separately on the Sky Sports website. In Sweden, TV4 Sport has the rights of broadcasting from the league. A couple of league matches during the season of 09/10 including play-off matches and the play-off final to the Championship were shown. In Australia, Setanta Sports Australia broadcasts live Championship matches. In the USA and surrounding countries including Cuba, some Football League Championship, Football League One and Football League Two games are shown on beIN Sport.\",\n      \"strDescriptionDE\": null,\n      \"strDescriptionFR\": \"La Football League One est depuis août 2004 le nom de la troisième division du championnat d'Angleterre de football.\",\n      \"strDescriptionIT\": null,\n      \"strDescriptionCN\": null,\n      \"strDescriptionJP\": null,\n      \"strDescriptionRU\": null,\n      \"strDescriptionES\": null,\n      \"strDescriptionPT\": null,\n      \"strDescriptionSE\": null,\n      \"strDescriptionNL\": null,\n      \"strDescriptionHU\": null,\n      \"strDescriptionNO\": null,\n      \"strDescriptionPL\": null,\n      \"strDescriptionIL\": null,\n      \"strTvRights\": \"US - ESPN [2018-2021]\",\n      \"strFanart1\": \"https://www.thesportsdb.com/images/media/league/fanart/jbs7l51706938896.jpg\",\n      \"strFanart2\": \"https://www.thesportsdb.com/images/media/league/fanart/m3dd6v1706938899.jpg\",\n      \"strFanart3\": \"https://www.thesportsdb.com/images/media/league/fanart/105ia01706938899.jpg\",\n      \"strFanart4\": \"https://www.thesportsdb.com/images/media/league/fanart/d2c27f1706938900.jpg\",\n      \"strBanner\": \"https://www.thesportsdb.com/images/media/league/banner/wp1ni51706803998.jpg\",\n      \"strBadge\": \"https://www.thesportsdb.com/images/media/league/badge/afedb31688770443.png\",\n      \"strLogo\": \"https://www.thesportsdb.com/images/media/league/logo/qqxuqq1467458876.png\",\n      \"strPoster\": \"https://www.thesportsdb.com/images/media/league/poster/yfca2c1538039602.jpg\",\n      \"strTrophy\": \"https://www.thesportsdb.com/images/media/league/trophy/rsrurr1447436418.png\",\n      \"strNaming\": \"{strHomeTeam} vs {strAwayTeam}\",\n      \"strComplete\": \"yes\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "eventresults.php",
+					"item": [
+						{
+							"name": "Event results",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventresults.php?id=652890",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventresults.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "652890",
+											"description": "(Required) Unique identifier for the event."
+										}
+									]
+								},
+								"description": "Get results of events based on search criteria."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/eventresults.php?id=652890",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventresults.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "652890",
+													"description": "(Required) Unique identifier for the event."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"results\": [\n    {\n      \"idResult\": \"607\",\n      \"idPlayer\": \"34167526\",\n      \"strPlayer\": \"Justin Barcia\",\n      \"idTeam\": \"135832\",\n      \"idEvent\": \"652890\",\n      \"strEvent\": \"Anaheim 1\",\n      \"strResult\": null,\n      \"intPosition\": \"1\",\n      \"intPoints\": \"26\",\n      \"strDetail\": \"1\",\n      \"dateEvent\": \"2020-01-05\",\n      \"strSeason\": \"2020\",\n      \"strCountry\": \"United States\",\n      \"strSport\": \"Motorsport\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "eventspastleague.php",
+					"item": [
+						{
+							"name": "Get Past League Events",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventspastleague.php?id=4328",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventspastleague.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4328",
+											"description": "(Required) Unique identifier for the league."
+										}
+									]
+								},
+								"description": "See the last few events for a league using the League ID."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/eventspastleague.php?id=4328",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventspastleague.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4328",
+													"description": "(Required) Unique identifier for the league."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"679698\",\n      \"idAPIfootball\": \"1035454\",\n      \"strEvent\": \"Arsenal vs Chelsea\",\n      \"strEventAlternate\": \"Chelsea @ Arsenal\",\n      \"strFilename\": \"FA Cup 2017-05-27 Arsenal vs Chelsea\",\n      \"strSport\": \"Soccer\",\n      \"idLeague\": \"4482\",\n      \"strLeague\": \"FA Cup\",\n      \"strLeagueBadge\": \"https://r2.thesportsdb.com/images/media/league/badge/vk7isd1598802862.png\",\n      \"strSeason\": \"2016-2017\",\n      \"strDescriptionEN\": \"\",\n      \"strHomeTeam\": \"Arsenal\",\n      \"strAwayTeam\": \"Chelsea\",\n      \"intHomeScore\": \"2\",\n      \"intRound\": \"200\",\n      \"intAwayScore\": \"1\",\n      \"intSpectators\": \"89472\",\n      \"strOfficial\": \"\",\n      \"strTimestamp\": \"2024-04-23T19:00:00\",\n      \"dateEvent\": \"2017-05-27\",\n      \"dateEventLocal\": \"2017-05-27\",\n      \"strTime\": \"17:30:00\",\n      \"strTimeLocal\": \"\",\n      \"strGroup\": \"\",\n      \"idHomeTeam\": \"133604\",\n      \"strHomeTeamBadge\": null,\n      \"idAwayTeam\": \"133610\",\n      \"strAwayTeamBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/yvwvtu1448813215.png\",\n      \"intScore\": null,\n      \"intScoreVotes\": null,\n      \"strResult\": \"\",\n      \"idVenue\": null,\n      \"strVenue\": null,\n      \"strCountry\": null,\n      \"strCity\": null,\n      \"strPoster\": null,\n      \"strSquare\": null,\n      \"strFanart\": null,\n      \"strThumb\": null,\n      \"strBanner\": null,\n      \"strMap\": null,\n      \"strTweet1\": \"\",\n      \"strTweet2\": \"\",\n      \"strTweet3\": \"\",\n      \"strVideo\": \"https://www.youtube.com/watch?v=OOkzIJ2Ge2M\",\n      \"strStatus\": null,\n      \"strPostponed\": \"no\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "eventsnextleague.php",
+					"item": [
+						{
+							"name": "Get Next League Events",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventsnextleague.php?id=4328",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventsnextleague.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4328",
+											"description": "(Required) Unique identifier for the league."
+										}
+									]
+								},
+								"description": "See the next few upcoming events for a league using the League ID."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/eventsnextleague.php?id=4328",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventsnextleague.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4328",
+													"description": "(Required) Unique identifier for the league."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"679698\",\n      \"idAPIfootball\": \"1035454\",\n      \"strEvent\": \"Arsenal vs Chelsea\",\n      \"strEventAlternate\": \"Chelsea @ Arsenal\",\n      \"strFilename\": \"FA Cup 2017-05-27 Arsenal vs Chelsea\",\n      \"strSport\": \"Soccer\",\n      \"idLeague\": \"4482\",\n      \"strLeague\": \"FA Cup\",\n      \"strLeagueBadge\": \"https://r2.thesportsdb.com/images/media/league/badge/vk7isd1598802862.png\",\n      \"strSeason\": \"2016-2017\",\n      \"strDescriptionEN\": \"\",\n      \"strHomeTeam\": \"Arsenal\",\n      \"strAwayTeam\": \"Chelsea\",\n      \"intHomeScore\": \"2\",\n      \"intRound\": \"200\",\n      \"intAwayScore\": \"1\",\n      \"intSpectators\": \"89472\",\n      \"strOfficial\": \"\",\n      \"strTimestamp\": \"2024-04-23T19:00:00\",\n      \"dateEvent\": \"2017-05-27\",\n      \"dateEventLocal\": \"2017-05-27\",\n      \"strTime\": \"17:30:00\",\n      \"strTimeLocal\": \"\",\n      \"strGroup\": \"\",\n      \"idHomeTeam\": \"133604\",\n      \"strHomeTeamBadge\": null,\n      \"idAwayTeam\": \"133610\",\n      \"strAwayTeamBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/yvwvtu1448813215.png\",\n      \"intScore\": null,\n      \"intScoreVotes\": null,\n      \"strResult\": \"\",\n      \"idVenue\": null,\n      \"strVenue\": null,\n      \"strCountry\": null,\n      \"strCity\": null,\n      \"strPoster\": null,\n      \"strSquare\": null,\n      \"strFanart\": null,\n      \"strThumb\": null,\n      \"strBanner\": null,\n      \"strMap\": null,\n      \"strTweet1\": \"\",\n      \"strTweet2\": \"\",\n      \"strTweet3\": \"\",\n      \"strVideo\": \"https://www.youtube.com/watch?v=OOkzIJ2Ge2M\",\n      \"strStatus\": null,\n      \"strPostponed\": \"no\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "eventslast.php",
+					"item": [
+						{
+							"name": "Get Last Events",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventslast.php?id=133602",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventslast.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "133602",
+											"description": "(Required) Unique identifier for the team."
+										}
+									]
+								},
+								"description": "See the last few events for a team using the Team ID."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/eventslast.php?id=133602",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventslast.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "133602",
+													"description": "(Required) Unique identifier for the team."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"results\": [\n    {\n      \"idEvent\": \"2070211\",\n      \"idAPIfootball\": \"1208396\",\n      \"strEvent\": \"Liverpool vs Crystal Palace\",\n      \"strEventAlternate\": \"Crystal Palace @ Liverpool\",\n      \"strFilename\": \"English Premier League 2025-05-25 Liverpool vs Crystal Palace\",\n      \"strSport\": \"Soccer\",\n      \"idLeague\": \"4328\",\n      \"strLeague\": \"English Premier League\",\n      \"strLeagueBadge\": \"https://www.thesportsdb.com/images/media/league/badge/gasy9d1737743125.png\",\n      \"strSeason\": \"2024-2025\",\n      \"strDescriptionEN\": \"\",\n      \"strHomeTeam\": \"Liverpool\",\n      \"strAwayTeam\": \"Crystal Palace\",\n      \"intHomeScore\": \"1\",\n      \"intRound\": \"38\",\n      \"intAwayScore\": \"1\",\n      \"intSpectators\": null,\n      \"strOfficial\": \"\",\n      \"strTimestamp\": \"2025-05-25T15:00:00\",\n      \"dateEvent\": \"2025-05-25\",\n      \"dateEventLocal\": \"2025-05-25\",\n      \"strTime\": \"15:00:00\",\n      \"strTimeLocal\": \"16:00:00\",\n      \"strGroup\": \"\",\n      \"idHomeTeam\": \"133602\",\n      \"strHomeTeamBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/kfaher1737969724.png\",\n      \"idAwayTeam\": \"133632\",\n      \"strAwayTeamBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/ia6i3m1656014992.png\",\n      \"intScore\": null,\n      \"intScoreVotes\": null,\n      \"strResult\": \"\",\n      \"idVenue\": \"15407\",\n      \"strVenue\": \"Anfield\",\n      \"strCountry\": \"England\",\n      \"strCity\": \"\",\n      \"strPoster\": \"https://r2.thesportsdb.com/images/media/event/poster/0bqt4u1689062755.jpg\",\n      \"strSquare\": \"https://r2.thesportsdb.com/images/media/event/square/m9bolf1689062898.jpg\",\n      \"strFanart\": null,\n      \"strThumb\": \"https://r2.thesportsdb.com/images/media/event/thumb/zc5b1c1689062606.jpg\",\n      \"strBanner\": \"https://r2.thesportsdb.com/images/media/event/banner/vscsuz1689063015.jpg\",\n      \"strMap\": null,\n      \"strTweet1\": \"\",\n      \"strTweet2\": \"\",\n      \"strTweet3\": \"\",\n      \"strVideo\": \"https://www.youtube.com/watch?v=V1LWoK1ZIfU\",\n      \"strStatus\": \"Match Finished\",\n      \"strPostponed\": \"no\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "eventsnext.php",
+					"item": [
+						{
+							"name": "Get Next Events",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventsnext.php?id=133602",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventsnext.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "133602",
+											"description": "(Required) Unique identifier for the team."
+										}
+									]
+								},
+								"description": "See the next few upcoming events for a team using the Team ID."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/eventsnext.php?id=133602",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventsnext.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "133602",
+													"description": "(Required) Unique identifier for the team."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"679698\",\n      \"idAPIfootball\": \"1035454\",\n      \"strEvent\": \"Arsenal vs Chelsea\",\n      \"strEventAlternate\": \"Chelsea @ Arsenal\",\n      \"strFilename\": \"FA Cup 2017-05-27 Arsenal vs Chelsea\",\n      \"strSport\": \"Soccer\",\n      \"idLeague\": \"4482\",\n      \"strLeague\": \"FA Cup\",\n      \"strLeagueBadge\": \"https://r2.thesportsdb.com/images/media/league/badge/vk7isd1598802862.png\",\n      \"strSeason\": \"2016-2017\",\n      \"strDescriptionEN\": \"\",\n      \"strHomeTeam\": \"Arsenal\",\n      \"strAwayTeam\": \"Chelsea\",\n      \"intHomeScore\": \"2\",\n      \"intRound\": \"200\",\n      \"intAwayScore\": \"1\",\n      \"intSpectators\": \"89472\",\n      \"strOfficial\": \"\",\n      \"strTimestamp\": \"2024-04-23T19:00:00\",\n      \"dateEvent\": \"2017-05-27\",\n      \"dateEventLocal\": \"2017-05-27\",\n      \"strTime\": \"17:30:00\",\n      \"strTimeLocal\": \"\",\n      \"strGroup\": \"\",\n      \"idHomeTeam\": \"133604\",\n      \"strHomeTeamBadge\": null,\n      \"idAwayTeam\": \"133610\",\n      \"strAwayTeamBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/yvwvtu1448813215.png\",\n      \"intScore\": null,\n      \"intScoreVotes\": null,\n      \"strResult\": \"\",\n      \"idVenue\": null,\n      \"strVenue\": null,\n      \"strCountry\": null,\n      \"strCity\": null,\n      \"strPoster\": null,\n      \"strSquare\": null,\n      \"strFanart\": null,\n      \"strThumb\": null,\n      \"strBanner\": null,\n      \"strMap\": null,\n      \"strTweet1\": \"\",\n      \"strTweet2\": \"\",\n      \"strTweet3\": \"\",\n      \"strVideo\": \"https://www.youtube.com/watch?v=OOkzIJ2Ge2M\",\n      \"strStatus\": null,\n      \"strPostponed\": \"no\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "eventsday.php",
+					"item": [
+						{
+							"name": "Get Events by Day",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventsday.php?d=2014-10-10&s=Soccer&l=MLB",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventsday.php"
+									],
+									"query": [
+										{
+											"key": "d",
+											"value": "2014-10-10",
+											"description": "(Required) Date to search for events (format `YYYY-MM-DD`)."
+										},
+										{
+											"key": "s",
+											"value": "Soccer",
+											"description": "Name of the sport to filter events (optional)."
+										},
+										{
+											"key": "l",
+											"value": "MLB",
+											"description": "Name of the league to filter events (optional)."
+										}
+									]
+								},
+								"description": "See the events on a specific day in the future, past or present."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/eventsday.php?d=2014-10-10&s=Soccer&l=MLB",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventsday.php"
+											],
+											"query": [
+												{
+													"key": "d",
+													"value": "2014-10-10",
+													"description": "(Required) Date to search for events (format `YYYY-MM-DD`)."
+												},
+												{
+													"key": "s",
+													"value": "Soccer",
+													"description": "Name of the sport to filter events (optional)."
+												},
+												{
+													"key": "l",
+													"value": "MLB",
+													"description": "Name of the league to filter events (optional)."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"679698\",\n      \"idAPIfootball\": \"1035454\",\n      \"strEvent\": \"Arsenal vs Chelsea\",\n      \"strEventAlternate\": \"Chelsea @ Arsenal\",\n      \"strFilename\": \"FA Cup 2017-05-27 Arsenal vs Chelsea\",\n      \"strSport\": \"Soccer\",\n      \"idLeague\": \"4482\",\n      \"strLeague\": \"FA Cup\",\n      \"strLeagueBadge\": \"https://r2.thesportsdb.com/images/media/league/badge/vk7isd1598802862.png\",\n      \"strSeason\": \"2016-2017\",\n      \"strDescriptionEN\": \"\",\n      \"strHomeTeam\": \"Arsenal\",\n      \"strAwayTeam\": \"Chelsea\",\n      \"intHomeScore\": \"2\",\n      \"intRound\": \"200\",\n      \"intAwayScore\": \"1\",\n      \"intSpectators\": \"89472\",\n      \"strOfficial\": \"\",\n      \"strTimestamp\": \"2024-04-23T19:00:00\",\n      \"dateEvent\": \"2017-05-27\",\n      \"dateEventLocal\": \"2017-05-27\",\n      \"strTime\": \"17:30:00\",\n      \"strTimeLocal\": \"\",\n      \"strGroup\": \"\",\n      \"idHomeTeam\": \"133604\",\n      \"strHomeTeamBadge\": null,\n      \"idAwayTeam\": \"133610\",\n      \"strAwayTeamBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/yvwvtu1448813215.png\",\n      \"intScore\": null,\n      \"intScoreVotes\": null,\n      \"strResult\": \"\",\n      \"idVenue\": null,\n      \"strVenue\": null,\n      \"strCountry\": null,\n      \"strCity\": null,\n      \"strPoster\": null,\n      \"strSquare\": null,\n      \"strFanart\": null,\n      \"strThumb\": null,\n      \"strBanner\": null,\n      \"strMap\": null,\n      \"strTweet1\": \"\",\n      \"strTweet2\": \"\",\n      \"strTweet3\": \"\",\n      \"strVideo\": \"https://www.youtube.com/watch?v=OOkzIJ2Ge2M\",\n      \"strStatus\": null,\n      \"strPostponed\": \"no\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "eventsseason.php",
+					"item": [
+						{
+							"name": "Get Events by Season",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventsseason.php?id=4328&s=2014-2015",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventsseason.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4328",
+											"description": "(Required) Unique identifier for the league."
+										},
+										{
+											"key": "s",
+											"value": "2014-2015",
+											"description": "(Required) Name of the season to filter events."
+										}
+									]
+								},
+								"description": "See all the events for a particular season and filter by league ID."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/eventsseason.php?id=4328&s=2014-2015",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventsseason.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4328",
+													"description": "(Required) Unique identifier for the league."
+												},
+												{
+													"key": "s",
+													"value": "2014-2015",
+													"description": "(Required) Name of the season to filter events."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"679698\",\n      \"idAPIfootball\": \"1035454\",\n      \"strEvent\": \"Arsenal vs Chelsea\",\n      \"strEventAlternate\": \"Chelsea @ Arsenal\",\n      \"strFilename\": \"FA Cup 2017-05-27 Arsenal vs Chelsea\",\n      \"strSport\": \"Soccer\",\n      \"idLeague\": \"4482\",\n      \"strLeague\": \"FA Cup\",\n      \"strLeagueBadge\": \"https://r2.thesportsdb.com/images/media/league/badge/vk7isd1598802862.png\",\n      \"strSeason\": \"2016-2017\",\n      \"strDescriptionEN\": \"\",\n      \"strHomeTeam\": \"Arsenal\",\n      \"strAwayTeam\": \"Chelsea\",\n      \"intHomeScore\": \"2\",\n      \"intRound\": \"200\",\n      \"intAwayScore\": \"1\",\n      \"intSpectators\": \"89472\",\n      \"strOfficial\": \"\",\n      \"strTimestamp\": \"2024-04-23T19:00:00\",\n      \"dateEvent\": \"2017-05-27\",\n      \"dateEventLocal\": \"2017-05-27\",\n      \"strTime\": \"17:30:00\",\n      \"strTimeLocal\": \"\",\n      \"strGroup\": \"\",\n      \"idHomeTeam\": \"133604\",\n      \"strHomeTeamBadge\": null,\n      \"idAwayTeam\": \"133610\",\n      \"strAwayTeamBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/yvwvtu1448813215.png\",\n      \"intScore\": null,\n      \"intScoreVotes\": null,\n      \"strResult\": \"\",\n      \"idVenue\": null,\n      \"strVenue\": null,\n      \"strCountry\": null,\n      \"strCity\": null,\n      \"strPoster\": null,\n      \"strSquare\": null,\n      \"strFanart\": null,\n      \"strThumb\": null,\n      \"strBanner\": null,\n      \"strMap\": null,\n      \"strTweet1\": \"\",\n      \"strTweet2\": \"\",\n      \"strTweet3\": \"\",\n      \"strVideo\": \"https://www.youtube.com/watch?v=OOkzIJ2Ge2M\",\n      \"strStatus\": null,\n      \"strPostponed\": \"no\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "eventstv.php",
+					"item": [
+						{
+							"name": "Get Events by TV",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventstv.php?d=2024-07-07&a=United_Kingdom&s=Peacock_Premium",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventstv.php"
+									],
+									"query": [
+										{
+											"key": "d",
+											"value": "2024-07-07",
+											"description": "(Required) Date to search for events (format `YYYY-MM-DD`)."
+										},
+										{
+											"key": "a",
+											"value": "United_Kingdom",
+											"description": "Name of the country."
+										},
+										{
+											"key": "s",
+											"value": "Peacock_Premium",
+											"description": "Name of the sport to filter events (optional)."
+										}
+									]
+								},
+								"description": "See all the events for a particular TV station and filter by league ID."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/eventstv.php?d=2024-07-07&a=United_Kingdom&s=Peacock_Premium",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventstv.php"
+											],
+											"query": [
+												{
+													"key": "d",
+													"value": "2024-07-07",
+													"description": "(Required) Date to search for events (format `YYYY-MM-DD`)."
+												},
+												{
+													"key": "a",
+													"value": "United_Kingdom",
+													"description": "Name of the country."
+												},
+												{
+													"key": "s",
+													"value": "Peacock_Premium",
+													"description": "Name of the sport to filter events (optional)."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"tvevents\": [\n    {\n      \"id\": \"808307\",\n      \"idEvent\": \"2009058\",\n      \"intDivision\": \"1\",\n      \"strSport\": \"American Football\",\n      \"strEvent\": \"Hamilton Tiger-Cats vs BC Lions\",\n      \"strEventThumb\": null,\n      \"strEventPoster\": null,\n      \"strEventBanner\": null,\n      \"strEventSquare\": null,\n      \"idChannel\": \"5990\",\n      \"strCountry\": \"United States\",\n      \"strEventCountry\": null,\n      \"strLogo\": \"https://r2.thesportsdb.com/images/media/channel/logo/77gqjl1624103918.png\",\n      \"strChannel\": \"CBS Sports Network USA\",\n      \"strSeason\": \"2024\",\n      \"strTime\": \"23:00:00\",\n      \"dateEvent\": \"2024-07-07\",\n      \"strTimeStamp\": \"2024-07-07 23:00:00\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "List",
+			"item": [
+				{
+					"name": "all_leagues.php",
+					"item": [
+						{
+							"name": "Get All Leagues",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/all_leagues.php",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"all_leagues.php"
+									]
+								},
+								"description": "List all the leagues supported on the website."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/all_leagues.php",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"all_leagues.php"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"leagues\": [\n    {\n      \"idLeague\": \"4328\",\n      \"strLeague\": \"English Premier League\",\n      \"strSport\": \"Soccer\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "all_countries.php",
+					"item": [
+						{
+							"name": "Get All Countries",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/all_countries.php",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"all_countries.php"
+									]
+								},
+								"description": "List all the countries supported on the website."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/all_countries.php",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"all_countries.php"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"countries\": [\n    {\n      \"name_en\": \"Andorra\",\n      \"flag_url_32\": \"https://www.thesportsdb.com/images/icons/flags/shiny/32/Andorra.png\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "all_sports.php",
+					"item": [
+						{
+							"name": "Get All Sports",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/all_sports.php",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"all_sports.php"
+									]
+								},
+								"description": "List all the sport categories supported on the website."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/all_sports.php",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"all_sports.php"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"sports\": [\n    {\n      \"idSport\": \"102\",\n      \"strSport\": \"Soccer\",\n      \"strFormat\": \"TeamvsTeam\",\n      \"strSportThumb\": \"https://www.thesportsdb.com/images/sports/soccer.jpg\",\n      \"strSportThumbBW\": \"https://www.thesportsdb.com/images/sports/bw/soccer.jpg\",\n      \"strSportIconGreen\": \"https://www.thesportsdb.com/images/icons/sports/soccer.png\",\n      \"strSportDescription\": \"Association football, more commonly known as football or soccer, is a team sport played between two teams of eleven players with a spherical ball. It is played by 250 million players in over 200 countries and dependencies, making it the world's most popular sport. The game is played on a rectangular field with a goal at each end. The object of the game is to score by getting the ball into the opposing goal.\\r\\n\\r\\nPlayers are not allowed to touch the ball with their hands or arms while it is in play, unless they are goalkeepers (and then only when within their penalty area). Other players mainly use their feet to strike or pass the ball, but may also use any part of their body except the hands and the arms. The team that scores the most goals by the end of the match wins. If the score is level at the end of the game, either a draw is declared or the game goes into extra time or a penalty shootout depending on the format of the competition. The Laws of the Game were originally codified in England by The Football Association in 1863. Association football is governed internationally by the International Federation of Association Football (FIFA; French: Fédération Internationale de Football Association), which organises World Cups for both men and women every four years.\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "search_all_leagues.php",
+					"item": [
+						{
+							"name": "Search All Leagues",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/search_all_leagues.php?s=Soccer&c=England",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"search_all_leagues.php"
+									],
+									"query": [
+										{
+											"key": "s",
+											"value": "Soccer",
+											"description": "(Required) Name of the sport to search for leagues."
+										},
+										{
+											"key": "c",
+											"value": "England",
+											"description": "(Required) Name of the country to search for leagues."
+										}
+									]
+								},
+								"description": "Search for leagues by country and sport name."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/search_all_leagues.php?s=Soccer&c=England",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"search_all_leagues.php"
+											],
+											"query": [
+												{
+													"key": "s",
+													"value": "Soccer",
+													"description": "(Required) Name of the sport to search for leagues."
+												},
+												{
+													"key": "c",
+													"value": "England",
+													"description": "(Required) Name of the country to search for leagues."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"countries\": [\n    {\n      \"idLeague\": \"4847\",\n      \"idSoccerXML\": null,\n      \"idAPIfootball\": \"6341\",\n      \"strSport\": \"Soccer\",\n      \"strLeague\": \"EFL Trophy\",\n      \"strLeagueAlternate\": \"English Football League Trophy\",\n      \"intDivision\": \"99\",\n      \"idCup\": \"1\",\n      \"strCurrentSeason\": \"2024-2025\",\n      \"intFormedYear\": \"1983\",\n      \"dateFirstEvent\": \"2019-03-31\",\n      \"strGender\": \"Male\",\n      \"strCountry\": \"England\",\n      \"strWebsite\": \"www.efl.com/efl-trophy\",\n      \"strFacebook\": \"\",\n      \"strInstagram\": \"\",\n      \"strTwitter\": \"\",\n      \"strYoutube\": \"\",\n      \"strRSS\": \"\",\n      \"strDescriptionEN\": \"The EFL Trophy (English Football League Trophy) is an annual English association football knockout competition open to the 48 clubs in EFL League One and EFL League Two, the third and fourth tiers of the English football league system and, since the 2016–17 season, 16 under-21 sides from Premier League and EFL Championship clubs. It is the third most prestigious knockout trophy in English football after the FA Cup and EFL Cup.\\r\\n\\r\\nIt began in the 1983–84 season as the Associate Members' Cup, but in 1992, after the lower-division clubs became full members of the Football League, it was renamed the Football League Trophy. The competition replaced the short-lived Football League Group Cup. It was renamed again in 2016, as the EFL Trophy. The competition has been associated with a title sponsor since its second season: currently, it is known as the Leasing.com Trophy, having previously been the Checkatrade Trophy.\\r\\n\\r\\nThe first draws are made in August, then the competition runs as 16 regional groups, each containing four teams. The top two from each group qualify for the knockout stages before the two winners meet in late March or early April in the final at England's national stadium, Wembley. The basic north/south format of the competition has existed since its beginnings, with some Midlands clubs fluctuating between the north and south draws each season. Other details have varied over the years, including in some years inviting clubs from the semi-professional Conference Premier, and holding a round-robin group stage prior to moving into knockout rounds.\\r\\n\\r\\nThe current (2018–19) champions are Portsmouth, who beat Sunderland 5–4 on penalties in the 2019 final to win the competition for the first time. The most successful club is Bristol City, who have lifted the trophy three times, in 1986, 2003 and 2015, and were finalists in 1987 and 2000.\",\n      \"strDescriptionDE\": null,\n      \"strDescriptionFR\": null,\n      \"strDescriptionIT\": null,\n      \"strDescriptionCN\": null,\n      \"strDescriptionJP\": null,\n      \"strDescriptionRU\": null,\n      \"strDescriptionES\": null,\n      \"strDescriptionPT\": null,\n      \"strDescriptionSE\": null,\n      \"strDescriptionNL\": null,\n      \"strDescriptionHU\": null,\n      \"strDescriptionNO\": null,\n      \"strDescriptionPL\": null,\n      \"strDescriptionIL\": null,\n      \"strTvRights\": null,\n      \"strFanart1\": null,\n      \"strFanart2\": null,\n      \"strFanart3\": null,\n      \"strFanart4\": null,\n      \"strBanner\": null,\n      \"strBadge\": \"https://www.thesportsdb.com/images/media/league/badge/35agti1699762858.png\",\n      \"strLogo\": \"https://www.thesportsdb.com/images/media/league/logo/ir52yc1598977493.png\",\n      \"strPoster\": null,\n      \"strTrophy\": \"https://www.thesportsdb.com/images/media/league/trophy/h42b8t1706802574.png\",\n      \"strNaming\": \"{strHomeTeam} vs {strAwayTeam}\",\n      \"strComplete\": null,\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "search_all_seasons.php",
+					"item": [
+						{
+							"name": "Search All Seasons",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/search_all_seasons.php?id=4328&poster=1&badge=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"search_all_seasons.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4328",
+											"description": "(Required) Unique identifier for the league."
+										},
+										{
+											"key": "poster",
+											"value": "1",
+											"description": "Whether to include poster images in the response (1 for yes, 0 for no)."
+										},
+										{
+											"key": "badge",
+											"value": "1",
+											"description": "Whether to include badge images in the response (1 for yes, 0 for no)."
+										}
+									]
+								},
+								"description": "List all the seasons available for a specific league ID"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/search_all_seasons.php?id=4328&poster=1&badge=1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"search_all_seasons.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4328",
+													"description": "(Required) Unique identifier for the league."
+												},
+												{
+													"key": "poster",
+													"value": "1",
+													"description": "Whether to include poster images in the response (1 for yes, 0 for no)."
+												},
+												{
+													"key": "badge",
+													"value": "1",
+													"description": "Whether to include badge images in the response (1 for yes, 0 for no)."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"seasons\": [\n    {\n      \"strSeason\": \"1992-1993\",\n      \"strPoster\": \"https://www.thesportsdb.com/images/media/league/poster/3z4b5t1706802574.png\",\n      \"strBadge\": \"https://www.thesportsdb.com/images/media/league/badgearchive/02egea1661959225.png\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "search_all_teams.php",
+					"item": [
+						{
+							"name": "Search All Teams",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/search_all_teams.php?l=English Premier League&c=England&s=Soccer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"search_all_teams.php"
+									],
+									"query": [
+										{
+											"key": "l",
+											"value": "English Premier League",
+											"description": "(Required) Name of the league to search for teams."
+										},
+										{
+											"key": "c",
+											"value": "England",
+											"description": "Name of the country to search for teams (optional)."
+										},
+										{
+											"key": "s",
+											"value": "Soccer",
+											"description": "Name of the sport to search for teams (optional)."
+										}
+									]
+								},
+								"description": "List all the teams in a specific league by the leagues name, country and sport or ID."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/search_all_teams.php?l=English Premier League&c=England&s=Soccer",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"search_all_teams.php"
+											],
+											"query": [
+												{
+													"key": "l",
+													"value": "English Premier League",
+													"description": "(Required) Name of the league to search for teams."
+												},
+												{
+													"key": "c",
+													"value": "England",
+													"description": "Name of the country to search for teams (optional)."
+												},
+												{
+													"key": "s",
+													"value": "Soccer",
+													"description": "Name of the sport to search for teams (optional)."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"teams\": [\n    {\n      \"idTeam\": \"133604\",\n      \"idESPN\": \"359\",\n      \"idAPIfootball\": \"42\",\n      \"intLoved\": \"8\",\n      \"strTeam\": \"Arsenal\",\n      \"strTeamAlternate\": \"Arsenal Football Club, AFC, Arsenal FC\",\n      \"strTeamShort\": \"ARS\",\n      \"intFormedYear\": \"1892\",\n      \"strSport\": \"Soccer\",\n      \"strLeague\": \"English Premier League\",\n      \"idLeague\": \"4328\",\n      \"strLeague2\": \"FA Cup\",\n      \"idLeague2\": \"4482\",\n      \"strLeague3\": \"EFL Cup\",\n      \"idLeague3\": \"4570\",\n      \"strLeague4\": \"UEFA Champions League\",\n      \"idLeague4\": \"4480\",\n      \"strLeague5\": \"\",\n      \"idLeague5\": null,\n      \"strLeague6\": \"\",\n      \"idLeague6\": null,\n      \"strLeague7\": \"\",\n      \"idLeague7\": null,\n      \"strDivision\": null,\n      \"idVenue\": \"15528\",\n      \"strStadium\": \"Emirates Stadium\",\n      \"strKeywords\": \"Gunners, Gooners\",\n      \"strRSS\": \"\",\n      \"strLocation\": \"Holloway, London, England\",\n      \"intStadiumCapacity\": \"60338\",\n      \"strWebsite\": \"www.arsenal.com\",\n      \"strFacebook\": \"www.facebook.com/Arsenal\",\n      \"strTwitter\": \"twitter.com/arsenal\",\n      \"strInstagram\": \"instagram.com/arsenal\",\n      \"strDescriptionEN\": \"Arsenal Football Club is a professional football club based in Islington, London, England, that plays in the Premier League, the top flight of English football. The club has won 13 League titles, a record 13 FA Cups, 2 League Cups, 15 FA Community Shields, 1 League Centenary Trophy, 1 UEFA Cup Winners' Cup and 1 Inter-Cities Fairs Cup.\\r\\n\\r\\nArsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division, and have won the second-most top-flight matches in English football history. In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position.\\r\\n\\r\\nHerbert Chapman won Arsenal's first national trophies, but died prematurely. He helped introduce the WM formation, floodlights, and shirt numbers, and added the white sleeves and brighter red to the club's kit. Arsène Wenger was the longest-serving manager and won the most trophies. He won a record 7 FA Cups, and his title-winning team set an English record for the longest top-flight unbeaten league run at 49 games between 2003 and 2004, receiving the nickname The Invincibles.\\r\\n\\r\\nIn 1886, Woolwich munitions workers founded the club as Dial Square. In 1913, the club crossed the city to Arsenal Stadium in Highbury, becoming close neighbours of Tottenham Hotspur, and creating the North London derby. In 2006, they moved to the nearby Emirates Stadium. In terms of revenue, Arsenal is the ninth highest-earning football club in the world, earned €487.6m in 2016–17 season. Based on social media activity from 2014 to 2015, Arsenal's fanbase is the fifth largest in the world. In 2018, Forbes estimated the club was the third most valuable in England, with the club being worth $2.24 billion.\",\n      \"strDescriptionDE\": \"Der FC Arsenal (offiziell: Arsenal Football Club) – auch bekannt als (The) Arsenal, (The) Gunners (deutsche Übersetzung: „Schützen“ oder „Kanoniere“) oder im deutschen Sprachraum auch Arsenal London genannt – ist ein 1886 gegründeter Fußballverein aus dem Ortsteil Holloway des Nordlondoner Bezirks Islington. Mit 13 englischen Meisterschaften und elf FA-Pokalsiegen zählt der Klub zu den erfolgreichsten englischen Fußballvereinen.Erst über 40 Jahre nach der Gründung gewann Arsenal mit fünf Ligatiteln und zwei FA Cups in den 1930er Jahren seine ersten bedeutenden Titel. Der nächste Meilenstein war in der Saison 1970/71 der Gewinn des zweiten englischen „Doubles“ im 20. Jahrhundert. In den vergangenen 20 Jahren etablierte sich Arsenal endgültig als einer der erfolgreichsten englischen Fußballvereine, und beim Gewinn zweier weiterer Doubles zu Beginn des 21. Jahrhunderts blieb die Mannschaft in der Ligasaison 2003/04 als zweite in der englischen Fußballgeschichte ungeschlagen. Zunehmende europäische Ambitionen unterstrich der Verein in der Spielzeit 2005/06, als Arsenal als erster Londoner Verein das Finale der Champions League erreichte.\",\n      \"strDescriptionFR\": \"Arsenal Football Club est un club de football anglais fondé le 1er décembre 1886 à Londres. Son siège est situé dans le borough londonien d'Islington.\\r\\n\\r\\nArsenal participe au championnat d'Angleterre de football depuis 1919 dont il a remporté treize éditions, ce qui en fait le troisième club le plus titré d'Angleterre, ainsi que treize coupes d'Angleterre ce qui constitue un record (devant Manchester United, qui en a remporté 12). Sur le plan continental, les Gunners (en français : « les canonniers ») comptent à leur palmarès une Coupe d'Europe des vainqueurs de coupe obtenue en 1994. Deux fois finalistes de cette coupe des vainqueurs de coupe en 1980 et 1995, ils ont également atteint les finales de la coupe de l'UEFA en 2000, de la Ligue des champions en 2006 et de l'Europa League en 2019.\\r\\n\\r\\nRésident dès 1913 du stade de Highbury, situé dans un quartier du nord de Londres, le club s’est installé en 2006 dans une nouvelle enceinte de 60 355 places : l'Emirates Stadium, situé à Ashburton Grove. Arsenal nourrit une certaine rivalité avec les nombreux autres clubs de la capitale, mais celle l'opposant à Tottenham Hotspur, avec qui il dispute chaque année le « North London derby » est particulièrement ancienne et profonde.\\r\\n\\r\\nLe club est dirigé par Chips Keswick (en) qui succède pour raisons de santé en juin 2013 à Peter Hill-Wood, fils et petit-fils des anciens présidents Denis et Samuel Hill-Wood. Il remplace son père à la mort de ce dernier, en 1982, après vingt ans de responsabilités. Son entraîneur depuis le 29 novembre 2019 est le Suédois Fredrik Ljungberg, ancien joueur du club, après le limogeage de l’Espagnol Unai Emery. Cependant le 20 décembre 2019, l'Espagnol Mikel Arteta, lui aussi ancien joueur du club, est nommé entraîneur. Il était avant sa nomination l'assistant de Pep Guardiola à Manchester City\",\n      \"strDescriptionCN\": null,\n      \"strDescriptionIT\": \"L'Arsenal Football Club, noto semplicemente come Arsenal, è una società calcistica inglese con sede a Londra, più precisamente nel quartiere di Holloway, nel borgo di Islington.[3]\\r\\n\\r\\nFondato nel 1886, è uno dei quattordici club che rappresentano la città di Londra a livello professionistico,[4] nonché uno dei più antichi del Paese. Milita nella massima serie del calcio inglese ininterrottamente dal 1919-1920, risultando quindi la squadra da più tempo presente in First Division/Premier League. È la prima squadra della capitale del Regno Unito per successi sportivi e, in ambito federale, la terza dopo Manchester United e Liverpool, essendosi aggiudicata nel corso della sua storia tredici campionati inglesi, dodici FA Cup (record di vittorie, condiviso con il Manchester United), due League Cup e quattordici Community Shield (una condivisa),[5] mentre in ambito internazionale ha conquistato una Coppa delle Coppe ed una Coppa delle Fiere. Inoltre è una delle tredici squadre che hanno raggiunto le finali di tutte le tre principali competizioni gestite dalla UEFA: Champions League (2005-2006), Coppa UEFA (1999-2000) e Coppa delle Coppe (1979-1980, 1993-1994 e 1994-1995).[6]\\r\\n\\r\\nI colori sociali, rosso per la maglietta e bianco per i pantaloncini, hanno subìto variazioni più o meno evidenti nel corso degli anni. Anche la sede del club è stata cambiata più volte: inizialmente la squadra giocava a Woolwich, ma nel 1913 si spostò all'Arsenal Stadium, nel quartiere di Highbury; dal 2006 disputa invece le sue partite casalinghe nel nuovo Emirates Stadium. Lo stemma è stato modificato ripetutamente, ma al suo interno è sempre comparso almeno un cannone. Proprio per questo motivo i giocatori ed i tifosi dell'Arsenal sono spesso soprannominati Gunners (in italiano \\\"cannonieri\\\").\\r\\n\\r\\nL'Arsenal conta su una schiera di tifosi molto nutrita, distribuita in ogni parte del mondo. Nel corso degli anni sono sorte profonde rivalità con i sostenitori di club concittadini, la più sentita delle quali è quella con i seguaci del Tottenham Hotspur, con i quali i Gunners giocano regolarmente il North London derby.[7] L'Arsenal è anche uno dei club più ricchi del mondo, con un patrimonio stimato di 1,3 miliardi di dollari, secondo la rivista Forbes nel 2014, facendone il quinto club più ricco del pianeta e il secondo in Inghilterra.[8]\",\n      \"strDescriptionJP\": \"アーセナル・フットボール・クラブ（Arsenal Football Club、イギリス英語発音: [ˈɑːsənl ˈfutˌbɔːl klʌb]）は、イングランドの首都ロンドン北部をホームタウンとする、イングランドプロサッカーリーグ（プレミアリーグ）に加盟するプロサッカークラブ。クラブカラーは赤と白。\\r\\n\\r\\n現在のホームスタジアムはロンドンのエミレーツ・スタジアム（収容人数60,260人）。プレミアリーグに所属し、同リーグにおいて3回の優勝記録を持つ（フットボールリーグ時代を含めると13回）。2003-2004シーズンには無敗優勝を達成したイングランド屈指の強豪である。1886年に軍需工場の労働者のクラブとして創設されたため、チームのエンブレムは大砲のマークを持つ。「ガナーズ（Gunners）」の愛称で知られ[1]、サポーターは「グーナー（Gooner）」と呼ばれる。\\r\\n\\r\\nクラブのモットーは「勝利は調和の中から生まれる（ラテン語: Victoria Concordia Crescit）」。1949年から使用されたクレストに初めて登場する。現行のクレストは2002年から使用されており、大砲の上にサンセリフ体でチーム名が書かれている。\",\n      \"strDescriptionRU\": \"«Арсена́л» (официальное полное название — Футбольный клуб «Арсенал», англ. Arsenal Football Club, английское произношение: [ˈɑrsənəl 'futbɔ:l klʌb]) — английский профессиональный футбольный клуб из Северного Лондона, выступающий в Премьер-лиге. Основан в октябре 1886 года. Клуб 13 раз становился чемпионом Англии, 13 раз выигрывал Кубок Англии. Домашним стадионом клуба является Эмирейтс, вмещающий 60 704 зрителей[1].\\r\\n\\r\\n«Арсенал» провёл бо́льшую часть своей истории в высшем дивизионе английского футбола, в 1892 году стал одним из клубов-основателей английской Премьер-лиги[4]. Также клуб является рекордсменом по количеству сезонов подряд, проведённых в высшем дивизионе чемпионата Англии, начиная с 1919 года[5].\\r\\n\\r\\nПо данным Forbes на 2018 год, «Арсенал» занимал шестое место в списке самых дорогих футбольных клубов мира и оценивался в сумму 2,238 млрд. долларов США[6]. По данным аудиторской компании Deloitte, по итогам сезона 2016/17 «Арсенал» занимал 6-ю строчку в рейтинге самых доходных футбольных клубов с доходом в размере 487,6 млн евро[7].\",\n      \"strDescriptionES\": \"El Arsenal Football Club (pronunciación en inglés: /ˈɑː(ɹ)sənəl ˈfʊtˌbɔl klʌb/) es un club de fútbol profesional con sede en Holloway, Londres, Inglaterra, que juega en la máxima categoría del fútbol de ese país, la Premier League. Uno de los más laureados del fútbol inglés, ha ganado 43 títulos en su país, incluyendo 13 campeonatos de liga y un récord de 13 Copas de Inglaterra; también ha ganado dos títulos internacionales: la Copa europea de Ferias en 1970 y la Recopa de Europa en 1994.\\r\\n\\r\\nFundado en 1886 en el sudeste de Londres, en 1893, se convirtió en el primer club del sur de Inglaterra en unirse a la Football League. Ganó sus primeros títulos —cinco ligas y dos FA Cups— en los años 1930. Luego de un período de escasez en los años posteriores a la Segunda Guerra Mundial, se convirtió en el segundo club del siglo XX en ganar el doblete, obteniendo el Campeonato de Liga y la FA Cup de la temporada 1970-71. Los logros siguieron en los años 1990 y 2000. Durante esos años, Arsenal ganó un doblete de copas nacionales, dos dobletes de Liga y Copa, y dos bicampeonatos de la Copa de Inglaterra. Finalizó una temporada de Liga invicto y se convirtió en el primer club de Londres en llegar a la final de la Liga de Campeones de la UEFA.\\r\\n\\r\\nLos colores tradicionales del club, el blanco y el rojo, han evolucionado con el tiempo. Del mismo modo, fue cambiando la ubicación del club; fundado en el distrito de Woolwich, en el sureste de Londres, en 1913 se mudó al norte de Londres, más exactamente en el distrito de Highbury, donde fue establecido el Arsenal Stadium, que funcionó hasta 2006, donde se hizo un traslado más corto, hacia los alrededores de Holloway, donde se levantó el actual Emirates Stadium. La estadía histórica del Arsenal en el norte de Londres, ha creado con el tiempo una fuerte rivalidad con el Tottenham Hotspur, conocida como el Derbi del Norte de Londres.4​\\r\\n\\r\\nArsenal posee una de las aficiones más numerosas del mundo.5​6​7​ Según la revista Forbes, el club fue el quinto club más valioso del mundo en 2014, con un valor de 1300 millones libras.8​\",\n      \"strDescriptionPT\": \"Arsenal Football Club é um clube de futebol, fundado e baseado em Londres, capital da Inglaterra.\\r\\n\\r\\nO clube disputa a Premier League e é um dos mais bem sucedidos do futebol inglês, tendo ganhado por 13 vezes o título de campeão do Campeonato Inglês, sendo o terceiro em número de conquistas, e por 13 vezes a Copa da Inglaterra (recorde), sendo também detentor do recorde de maior período de invencibilidade no Campeonato Inglês e também o de ser o único a ganhar a Premier League invicto. No plano internacional, conquistou a Recopa Europeia e a Taça das Cidades com Feiras, já tendo sido finalista da Liga dos Campeões da UEFA, a principal competição europeia de clubes.\\r\\n\\r\\nO Arsenal mudou de localização ao longo do tempo, tendo sido fundado em Woolwich, sudeste de Londres, em 1913 mudou-se para o norte de Londres, para o Arsenal Stadium, em Highbury. Em 2006 foi concluída a construção do Emirates Stadium, que está localizado nas proximidades de Holloway, o que foi prometido desde 2004, após o clube fechar negócio com a Emirates Airlines, tendo capacidade para mais de 60.000 expectadores.[3]\\r\\n\\r\\nO Arsenal tem muitos torcedores por todo mundo, possuindo uma série de rivalidades de longa data com outros clubes, sendo a mais notável delas contra os vizinhos do Tottenham, com quem disputa regularmente o North London Derby, bastante intensas também contra o Chelsea e o Manchester United.[4]\\r\\n\\r\\nSuas cores têm sido tradicionalmente vermelho e branco, mas seus uniformes evoluíram ao longo da história. Um outro grande feito é o de ser um dos 5 únicos clubes do mundo que já venceram a Seleção Brasileira.[5] Já o Arsenal Ladies, é um dos clubes mais bem sucedidos do futebol feminino na Inglaterra.\",\n      \"strDescriptionSE\": null,\n      \"strDescriptionNL\": null,\n      \"strDescriptionHU\": null,\n      \"strDescriptionNO\": \"Arsenal Football Club er en engelsk fotballklubb som spiller i Premier League. Klubben ble stiftet i 1886, og ble valgt inn i The Football League i 1893. «The Gunners», som er kallenavnet til Arsenal, spiller hjemmekampene sine på Emirates Stadium i Holloway. Holloway er et sted i bydelen Islington som ligger i det nordlige London.\",\n      \"strDescriptionIL\": null,\n      \"strDescriptionPL\": null,\n      \"strColour1\": \"#EF0107\",\n      \"strColour2\": \"#fbffff\",\n      \"strColour3\": \"#013373\",\n      \"strGender\": \"Male\",\n      \"strCountry\": \"England\",\n      \"strBadge\": \"https://r2.thesportsdb.com/images/media/team/badge/uyhbfe1612467038.png\",\n      \"strLogo\": \"https://r2.thesportsdb.com/images/media/team/logo/q2mxlz1512644512.png\",\n      \"strFanart1\": \"https://r2.thesportsdb.com/images/media/team/fanart/qqm9rn1731313837.jpg\",\n      \"strFanart2\": \"https://r2.thesportsdb.com/images/media/team/fanart/lk3che1731313857.jpg\",\n      \"strFanart3\": \"https://r2.thesportsdb.com/images/media/team/fanart/ddmaih1731313886.jpg\",\n      \"strFanart4\": \"https://r2.thesportsdb.com/images/media/team/fanart/2uvo8p1731313907.jpg\",\n      \"strBanner\": \"https://r2.thesportsdb.com/images/media/team/banner/24sngv1718273065.jpg\",\n      \"strEquipment\": \"https://r2.thesportsdb.com/images/media/team/equipment/wohyr81730135385.png\",\n      \"strYoutube\": \"www.youtube.com/user/ArsenalTour\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "lookup_all_players.php",
+					"item": [
+						{
+							"name": "Lookup All Players",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lookup_all_players.php?id=133604",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lookup_all_players.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "133604",
+											"description": "(Required) Unique identifier for the team."
+										}
+									]
+								},
+								"description": "List all the Players who play for a team by the teams ID."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/lookup_all_players.php?id=133604",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"lookup_all_players.php"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "133604",
+													"description": "(Required) Unique identifier for the team."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"player\": [\n    {\n      \"idPlayer\": \"34145937\",\n      \"idTeam\": \"133675\",\n      \"idTeam2\": null,\n      \"idTeamNational\": null,\n      \"idAPIfootball\": \"1917\",\n      \"idPlayerManager\": \"43001238\",\n      \"idWikidata\": \"Q129700\",\n      \"idTransferMkt\": \"45146\",\n      \"idESPN\": \"100681\",\n      \"strNationality\": \"Italy\",\n      \"strPlayer\": \"Mario Balotelli\",\n      \"strPlayerAlternate\": \"Mario Barwuah Balotelli\",\n      \"strTeam\": \"Genoa\",\n      \"strTeam2\": \"\",\n      \"strSport\": \"Soccer\",\n      \"intSoccerXMLTeamID\": \"6\",\n      \"dateBorn\": \"1990-08-12\",\n      \"dateDied\": null,\n      \"strNumber\": \"45\",\n      \"dateSigned\": \"2014-08-25\",\n      \"strSigning\": \"\",\n      \"strWage\": \"\",\n      \"strOutfitter\": \"\",\n      \"strKit\": \"\",\n      \"strAgent\": \"\",\n      \"strBirthLocation\": \"Palermo, Italy\",\n      \"strEthnicity\": \"Black\",\n      \"strStatus\": \"Active\",\n      \"strDescriptionEN\": \"Mario Balotelli Barwuah (Italian pronunciation: ; né Barwuah; born 12 August 1990) is an Italian professional footballer who plays as a striker for Serie A club Genoa.\\r\\n\\r\\nBalotelli started his professional football career in 2005 at Lumezzane, before joining Inter Milan in 2007. He won the treble (Serie A, Coppa Italia, and Champions League) in 2010. Balotelli reunited with Internazionale manager Roberto Mancini at Manchester City in 2010, helping them win a Premier League title and FA Cup. He moved back to Italy in January 2013, signing for Inter's rival club, AC Milan, before returning to the Premier League with Liverpool 18 months later. Following a return to Milan on loan, Balotelli departed to France, playing for Nice and Marseille in Ligue 1. He returned to Italy a third time, joining Serie A club Brescia in summer 2019, and Serie B club Monza in late 2020. The following summer, Balotelli signed for Turkish club Adana Demirspor.\\r\\n\\r\\nBalotelli earned his first cap for Italy in a friendly match against the Ivory Coast in 2010. He amassed over 30 caps and represented his country at UEFA Euro 2012, the 2013 FIFA Confederations Cup, and the 2014 FIFA World Cup. He helped the national side reach the final of Euro 2012, scoring twice against Germany in the semi-finals, and won bronze at the Confederations Cup. Balotelli is Italy's joint-top scorer in the UEFA European Championship, and joint-top scorer in the Confederations Cup.\\r\\n\\r\\nRegarded as a highly promising player in his youth, Balotelli is a versatile forward with strength, pace and an eye for goal. He is a penalty kick specialist. Despite his talent, Balotelli has been criticised for his poor attitude on and off the pitch.\",\n      \"strDescriptionDE\": null,\n      \"strDescriptionFR\": null,\n      \"strDescriptionCN\": null,\n      \"strDescriptionIT\": null,\n      \"strDescriptionJP\": null,\n      \"strDescriptionRU\": null,\n      \"strDescriptionES\": null,\n      \"strDescriptionPT\": null,\n      \"strDescriptionSE\": null,\n      \"strDescriptionNL\": null,\n      \"strDescriptionHU\": null,\n      \"strDescriptionNO\": null,\n      \"strDescriptionIL\": null,\n      \"strDescriptionPL\": null,\n      \"strGender\": \"Male\",\n      \"strSide\": \"Right\",\n      \"strPosition\": \"Centre-Forward\",\n      \"strCollege\": null,\n      \"strFacebook\": \"www.facebook.com/MarioOfficialBalotelli\",\n      \"strWebsite\": \"\",\n      \"strTwitter\": \"twitter.com/finallymario\",\n      \"strInstagram\": \"instagram.com/mb459\",\n      \"strYoutube\": \"\",\n      \"strHeight\": \"189 cm\",\n      \"strWeight\": \"192 lbs\",\n      \"intLoved\": \"0\",\n      \"strThumb\": \"https://www.thesportsdb.com/images/media/player/thumb/k3sczt1714571705.jpg\",\n      \"strPoster\": null,\n      \"strCutout\": \"https://www.thesportsdb.com/images/media/player/cutout/alfgb41610666098.png\",\n      \"strRender\": \"https://www.thesportsdb.com/images/media/player/render/sz8mu61654253818.png\",\n      \"strBanner\": null,\n      \"strFanart1\": \"https://www.thesportsdb.com/images/media/player/fanart/wwtsqs1431622222.jpg\",\n      \"strFanart2\": \"https://www.thesportsdb.com/images/media/player/fanart/upxsxy1431622235.jpg\",\n      \"strFanart3\": \"https://www.thesportsdb.com/images/media/player/fanart/vxqsyv1431622253.jpg\",\n      \"strFanart4\": \"https://www.thesportsdb.com/images/media/player/fanart/tvxuyq1431622269.jpg\",\n      \"strCreativeCommons\": \"Yes\",\n      \"strLocked\": \"unlocked\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Video",
+			"item": [
+				{
+					"name": "eventshighlights.php",
+					"item": [
+						{
+							"name": "Get Event Highlights",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventshighlights.php?d=2024-07-07&l=4684&s=motorsport",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventshighlights.php"
+									],
+									"query": [
+										{
+											"key": "d",
+											"value": "2024-07-07",
+											"description": "(Required) Date to search for event highlights (format `YYYY-MM-DD`)."
+										},
+										{
+											"key": "l",
+											"value": "4684",
+											"description": "Unique identifier for the league to filter highlights (optional)."
+										},
+										{
+											"key": "s",
+											"value": "motorsport",
+											"description": "Name of the sport to filter highlights (optional)."
+										}
+									]
+								},
+								"description": "See the TV schedual for a particular date."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/eventshighlights.php?d=2024-07-07&l=4684&s=motorsport",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventshighlights.php"
+											],
+											"query": [
+												{
+													"key": "d",
+													"value": "2024-07-07",
+													"description": "(Required) Date to search for event highlights (format `YYYY-MM-DD`)."
+												},
+												{
+													"key": "l",
+													"value": "4684",
+													"description": "Unique identifier for the league to filter highlights (optional)."
+												},
+												{
+													"key": "s",
+													"value": "motorsport",
+													"description": "Name of the sport to filter highlights (optional)."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"tvhighlights\": [\n    {\n      \"idEvent\": \"1917687\",\n      \"strEvent\": \"Grant Park 165\",\n      \"strSport\": \"Motorsport\",\n      \"idLeague\": \"4393\",\n      \"strLeague\": \"NASCAR Cup Series\",\n      \"strVideo\": \"https://www.youtube.com/watch?v=j-5S2qK4EOg\",\n      \"strPoster\": \"https://r2.thesportsdb.com/images/media/event/poster/g1il6j1698591868.jpg\",\n      \"strThumb\": \"https://r2.thesportsdb.com/images/media/event/thumb/zrmny81698591879.jpg\",\n      \"strFanart\": \"https://r2.thesportsdb.com/images/media/event/fanart/vqfxet1720442345.jpg\",\n      \"strSeason\": \"2024\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "api-key",
+			"value": "123"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://www.thesportsdb.com/api/v1/json/{{api-key}}"
+		}
+	]
+}

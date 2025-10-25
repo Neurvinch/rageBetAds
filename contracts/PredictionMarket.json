@@ -1,0 +1,954 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			}
+		],
+		"name": "claimWinnings",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "matchId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "team1",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "team2",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "aiTrashTalk",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "aiPrediction",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "durationSeconds",
+				"type": "uint256"
+			}
+		],
+		"name": "createMarket",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "evolveLoserNFTs",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_rageToken",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_nftContract",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "OwnableInvalidOwner",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "OwnableUnauthorizedAccount",
+		"type": "error"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "agreeWithAI",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "nftTokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "BetPlaced",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "inducted",
+				"type": "bool"
+			}
+		],
+		"name": "HallOfFameUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "inducted",
+				"type": "bool"
+			}
+		],
+		"name": "HallOfShameUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "matchId",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "team1",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "team2",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "aiTrashTalk",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "endTime",
+				"type": "uint256"
+			}
+		],
+		"name": "MarketCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "aiWasRight",
+				"type": "bool"
+			}
+		],
+		"name": "MarketResolved",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "agreeWithAI",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "placeBet",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "aiWasRight",
+				"type": "bool"
+			}
+		],
+		"name": "resolveMarket",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "newFee",
+				"type": "uint256"
+			}
+		],
+		"name": "updatePlatformFee",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "correctBets",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "totalBets",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "winnings",
+				"type": "uint256"
+			}
+		],
+		"name": "UserStatsUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "WinningsClaimed",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "withdrawFees",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			}
+		],
+		"name": "getMarket",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "marketId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "matchId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "team1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "team2",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "aiTrashTalk",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "aiPrediction",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalStake",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "agreeStake",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "disagreeStake",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "resolved",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "aiWasRight",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct PredictionMarket.Market",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			}
+		],
+		"name": "getOdds",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "agreeOdds",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "disagreeOdds",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "getUserNFTs",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "getUserStats",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "correctBets",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalBets",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "winnings",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "inHallOfFame",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "inHallOfShame",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "accuracy",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "hasClaimed",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "isHallOfFameMember",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "isHallOfShameMember",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "isInHallOfFame",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "isInHallOfShame",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "marketCounter",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "markets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "marketId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "matchId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "team1",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "team2",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "aiTrashTalk",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "aiPrediction",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalStake",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "agreeStake",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "disagreeStake",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "endTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "resolved",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "aiWasRight",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "nftContract",
+		"outputs": [
+			{
+				"internalType": "contract RageNFT",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "platformFeePercentage",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "rageToken",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "userCorrectBets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "userNFTs",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "userPredictions",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "userStakes",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "userTotalBets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "userWinnings",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
