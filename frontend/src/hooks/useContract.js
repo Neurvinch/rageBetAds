@@ -10,13 +10,20 @@ export function useContract(address, abi) {
   useEffect(() => {
     if (address && abi && (signer || provider)) {
       try {
+        // Basic validation for address
+        if (!address || address === '0x...' || address.length < 10) {
+          console.warn('⚠️ Contract address looks invalid or unset:', address);
+          setContract(null);
+          return;
+        }
+
         const contractInstance = new ethers.Contract(
           address,
           abi,
           signer || provider
         );
         setContract(contractInstance);
-        console.log('📄 Contract instance created:', address);
+        console.log('📄 Contract instance created:', address, 'with signer?', !!signer);
       } catch (error) {
         console.error('Error creating contract instance:', error);
       }
@@ -61,29 +68,52 @@ export function usePredictionMarket() {
   };
 
   const placeBet = async (marketId, agreeWithAI, amount) => {
-    if (!contract || !rageToken) throw new Error('Contracts not initialized');
+    if (!contract || !rageToken) {
+      const msg = 'Contracts not initialized. Check contract addresses and wallet connection.';
+      console.error(msg, { contract: !!contract, rageToken: !!rageToken });
+      throw new Error(msg);
+    }
     try {
       setLoading(true);
       
+      // Validate amount
+      if (!amount || Number(amount) <= 0) throw new Error('Invalid bet amount');
+
       // Convert amount to wei
       const amountWei = ethers.parseEther(amount.toString());
       
       // First, approve the token transfer
-      console.log('🔐 Approving token transfer...');
+      console.log('🔐 Approving token transfer...', { spender: CONTRACTS.PREDICTION_MARKET.address, amount: amountWei.toString() });
       const approveTx = await rageToken.approve(CONTRACTS.PREDICTION_MARKET.address, amountWei);
-      await approveTx.wait();
-      console.log('✅ Token approval confirmed');
+      const approveReceipt = await approveTx.wait();
+      console.log('✅ Token approval confirmed', approveReceipt.transactionHash);
       
       // Then place the bet
-      console.log('🎯 Placing bet...');
-      const tx = await contract.placeBet(marketId, agreeWithAI, amountWei);
+      console.log('🎯 Placing bet...', { marketId, agreeWithAI, amount: amountWei.toString() });
+      // Ensure marketId is a number / BigInt (contract expects uint256)
+      let marketIdParam = marketId;
+      try {
+        if (typeof marketId === 'string') {
+          if (/^0x/i.test(marketId)) {
+            marketIdParam = BigInt(marketId);
+          } else {
+            marketIdParam = BigInt(Number(marketId));
+          }
+        } else if (typeof marketId === 'number') {
+          marketIdParam = BigInt(marketId);
+        }
+      } catch (convErr) {
+        console.warn('Could not coerce marketId to BigInt, passing as-is:', marketId, convErr);
+      }
+
+      const tx = await contract.placeBet(marketIdParam, agreeWithAI, amountWei);
       const receipt = await tx.wait();
       console.log('✅ Bet placed successfully:', receipt.transactionHash);
       
       return { tx, receipt };
     } catch (err) {
       console.error('❌ Error placing bet:', err);
-      setError(err.message);
+      setError(err.message || String(err));
       throw err;
     } finally {
       setLoading(false);

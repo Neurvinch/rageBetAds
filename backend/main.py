@@ -6,6 +6,8 @@ import httpx
 import os
 from datetime import datetime, timedelta
 import json
+from dotenv import load_dotenv
+import os.path
 import random
 import asyncio
 
@@ -24,9 +26,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# SportsDB API configuration
+# Load .env from the backend directory if present (helps local dev)
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+
+# SportsDB API configuration (must be set in environment or backend/.env)
 SPORTSDB_API_KEY = os.getenv("SPORTSDB_API_KEY")
 SPORTSDB_BASE_URL = f"https://www.thesportsdb.com/api/v1/json/{SPORTSDB_API_KEY}"
+
+# Fail fast with a clear error if critical env var is missing
+if not SPORTSDB_API_KEY:
+    raise RuntimeError(
+        "Missing required environment variable: SPORTSDB_API_KEY.\n"
+        "Please set SPORTSDB_API_KEY in your environment or create backend/.env with it before starting the server."
+    )
 
 # Groq AI API configuration
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
