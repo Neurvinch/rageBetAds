@@ -17,13 +17,48 @@ export function useContract(address, abi) {
           return;
         }
 
-        const contractInstance = new ethers.Contract(
+        let contractInstance = new ethers.Contract(
           address,
           abi,
           signer || provider
         );
         setContract(contractInstance);
         console.log('📄 Contract instance created:', address, 'with signer?', !!signer);
+
+        // DEBUG: listen to on-chain events (BetPlaced, MarketCreated) to confirm transactions
+        try {
+          const onBetPlaced = (user, marketId, amount, agreeWithAI, nftTokenId, event) => {
+            console.log('🔔 BetPlaced event received', { user, marketId: marketId?.toString ? marketId.toString() : marketId, amount: amount?.toString ? amount.toString() : amount, agreeWithAI, nftTokenId });
+          };
+
+          const onMarketCreated = (marketId, matchId, team1, team2, aiTrashTalk, endTime, event) => {
+            console.log('🔔 MarketCreated event received', { marketId: marketId?.toString ? marketId.toString() : marketId, matchId, team1, team2, endTime: endTime?.toString ? endTime.toString() : endTime });
+          };
+
+          // Attach listeners only if provider supports events
+          if (contractInstance.on) {
+            contractInstance.on('BetPlaced', onBetPlaced);
+            contractInstance.on('MarketCreated', onMarketCreated);
+
+            // store listeners on the instance for cleanup
+            contractInstance.__debugListeners = { onBetPlaced, onMarketCreated };
+          }
+        } catch (evErr) {
+          console.warn('Could not attach contract event listeners:', evErr);
+        }
+
+        // Cleanup function to remove listeners when contract or provider changes
+        return () => {
+          try {
+            if (contractInstance && contractInstance.__debugListeners) {
+              const { onBetPlaced, onMarketCreated } = contractInstance.__debugListeners;
+              if (onBetPlaced) contractInstance.off('BetPlaced', onBetPlaced);
+              if (onMarketCreated) contractInstance.off('MarketCreated', onMarketCreated);
+            }
+          } catch (cleanupErr) {
+            // ignore cleanup errors
+          }
+        };
       } catch (error) {
         console.error('Error creating contract instance:', error);
       }
