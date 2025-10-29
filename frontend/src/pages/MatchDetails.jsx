@@ -24,7 +24,7 @@ export default function MatchDetails({ match, onBack }) {
       const matchDetailsData = await sportsService.getMatchDetails(match.idEvent);
 
       // Ensure marketId is set
-      const marketId = 1 || matchDetailsData?.marketId || match?.marketId ;
+      const marketId = 1n || matchDetailsData?.marketId || match?.marketId ;
       if (!marketId) {
         console.warn('marketId is missing in match details.');
       }
@@ -68,9 +68,9 @@ export default function MatchDetails({ match, onBack }) {
 
       console.log('Calling placeBet with:', { marketId, agreeWithAI, amount });
       const tx = await contract.placeBet(
-        1n,
+        marketId,
         agreeWithAI,
-        ethers.parseUnits(amount.toString(), 18)
+        amount
       );
       console.log('Transaction sent:', tx);
 
@@ -85,7 +85,13 @@ export default function MatchDetails({ match, onBack }) {
 
       alert('Bet placed successfully!');
     } catch (error) {
-      console.error('Error placing bet:', error);
+      console.error('Error placing bet:', {
+        error,
+        marketId,
+        agreeWithAI,
+        amount,
+        contractAddress: CONTRACTS.PREDICTION_MARKET.address,
+      });
       alert(`Failed to place bet: ${error.message || 'Unknown error'}`);
     }
   };
