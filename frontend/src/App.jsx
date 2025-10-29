@@ -13,6 +13,7 @@ import LeagueStandings from './pages/LeagueStandings'
 import MatchDetails from './pages/MatchDetails'
 import Profile from './pages/Profile'
 import Leaderboard from './pages/Leaderboard'
+import CreateMatchEvent from './pages/CreateMatchEvent'
 import {ConnectButton} from "@rainbow-me/rainbowkit"
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
         return <Profile />
       case 'match':
         return <MatchDetails match={selectedMatch} onBack={() => setCurrentPage('dashboard')} />
+      case 'create-match-event':
+        return <CreateMatchEvent />
       default:
         return <Dashboard />
     }
@@ -81,6 +84,12 @@ function App() {
             onClick={() => setCurrentPage('profile')}
           >
             👤 Profile
+          </button>
+          <button 
+            className={currentPage === 'create-match-event' ? 'active' : ''}
+            onClick={() => setCurrentPage('create-match-event')}
+          >
+            ⚡ Create Match Event
           </button>
         </div>
         <div className="nav-wallet">
