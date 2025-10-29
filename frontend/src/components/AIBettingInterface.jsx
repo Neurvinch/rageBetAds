@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useWeb3 } from '../hooks/useWeb3';
+// import { useWeb3 } from '../hooks/useWeb3';
+import {useAccount} from 'wagmi';
 import { usePredictionMarket } from '../hooks/useContract';
 import { CONTRACTS } from '../config/contracts';
 import { aiService, nftService } from '../services/apiService';
@@ -7,7 +8,8 @@ import { aiService, nftService } from '../services/apiService';
 export default function AIBettingInterface({ matchId, matchData }) {
   console.log('🤖 AIBettingInterface v2.0 rendered with matchId:', matchId);
   
-  const { account, connectWallet } = useWeb3();
+  // const { account, connectWallet } = useWeb3();
+  const{address, isConnected} = useAccount()
   const { 
     placeBet, 
     getTokenBalance,
@@ -29,7 +31,7 @@ export default function AIBettingInterface({ matchId, matchData }) {
   }, [matchId]);
 
   useEffect(() => {
-    if (account) {
+    if (address) {
       loadTokenBalance();
       // Quick connectivity check: log contract address and market count
       (async () => {
@@ -41,7 +43,7 @@ export default function AIBettingInterface({ matchId, matchData }) {
         }
       })();
     }
-  }, [account]);
+  }, [address]);
 
   const loadAIPrediction = async () => {
     try {
@@ -62,9 +64,9 @@ export default function AIBettingInterface({ matchId, matchData }) {
   };
 
   const handleBet = async (agreeWithAI) => {
-    if (!account) {
+    if (!address) {
       // Prompt user to connect wallet, then continue the flow automatically
-      await connectWallet();
+      alert('Please connect your wallet to place a bet.');
 
       // Try to read the connected account directly in case state hasn't updated yet
       try {

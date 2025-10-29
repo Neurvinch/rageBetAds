@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useWeb3 } from '../hooks/useWeb3';
+// import { useWeb3 } from '../hooks/useWeb3';
+
+import {useAccount} from "wagmi"
 
 export default function Leaderboard() {
-  const { account } = useWeb3();
+ const
   const [timeframe, setTimeframe] = useState('all-time');
   const [category, setCategory] = useState('winnings');
   
