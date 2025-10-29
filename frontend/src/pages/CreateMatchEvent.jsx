@@ -56,7 +56,7 @@ export default function CreateMatchEvent() {
     try {
       setLoading(true);
 
-      const leagueId = '4328'; // Replace with a valid default league ID
+      const leagueId = '4331'; // Replace with a valid default league ID
       console.log('Fetching matches for league ID:', leagueId);
 
       const data = await sportsService.getUpcomingMatches(leagueId);
