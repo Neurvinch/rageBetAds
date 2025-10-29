@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
+import { ethers } from 'ethers';
+import { useWalletClient } from 'wagmi';
 import { sportsService } from '../services/apiService';
+import { CONTRACTS } from '../config/contracts';
+import PredictionMarketABI from '../../../contracts/PredictionMarket.json';
 
 export default function MatchDetails({ match, onBack }) {
+  const { data: walletClient } = useWalletClient();
   const [matchDetails, setMatchDetails] = useState(null);
   const [stats, setStats] = useState([]);
   const [timeline, setTimeline] = useState([]);
@@ -26,6 +31,55 @@ export default function MatchDetails({ match, onBack }) {
       setMatchDetails(match); // Fallback to original match data
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleBet = async (marketId, agreeWithAI, amount) => {
+    try {
+      if (!walletClient) {
+        console.error('Wallet client is not connected.');
+        alert('Please connect your wallet first.');
+        return;
+      }
+
+      console.log('Initializing provider with walletClient:', walletClient);
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const signer = await provider.getSigner();
+      console.log('Signer initialized:', signer);
+
+      const contract = new ethers.Contract(
+        CONTRACTS.PREDICTION_MARKET.address,
+        PredictionMarketABI,
+        signer
+      );
+      console.log('Contract instance created:', contract);
+
+      if (!contract.placeBet) {
+        console.error('placeBet function is not defined on the contract.');
+        alert('Contract method not available. Please check the contract ABI.');
+        return;
+      }
+
+      const tx = await contract.placeBet(
+        marketId,
+        agreeWithAI,
+        ethers.parseUnits(amount.toString(), 18)
+      );
+      console.log('Transaction sent:', tx);
+
+      if (!tx || !tx.wait) {
+        console.error('Transaction object is invalid or missing the wait method:', tx);
+        alert('Invalid transaction object. Please check the contract interaction.');
+        return;
+      }
+
+      await tx.wait();
+      console.log('Transaction confirmed:', tx);
+
+      alert('Bet placed successfully!');
+    } catch (error) {
+      console.error('Error placing bet:', error);
+      alert(`Failed to place bet: ${error.message || 'Unknown error'}`);
     }
   };
 
@@ -96,13 +150,13 @@ export default function MatchDetails({ match, onBack }) {
           <div className="betting-section">
             <h3>🔥 Place Your Bet</h3>
             <div className="bet-options">
-              <button className="bet-option home">
+              <button className="bet-option home" onClick={() => handleBet(matchDetails.marketId, true, 10)}>
                 Bet on {matchDetails.strHomeTeam}
               </button>
-              <button className="bet-option draw">
+              <button className="bet-option draw" onClick={() => handleBet(matchDetails.marketId, false, 10)}>
                 Bet on Draw
               </button>
-              <button className="bet-option away">
+              <button className="bet-option away" onClick={() => handleBet(matchDetails.marketId, false, 10)}>
                 Bet on {matchDetails.strAwayTeam}
               </button>
             </div>

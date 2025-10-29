@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import {useAccount} from "wagmi"
 
 export default function Leaderboard() {
- const
+
   const [timeframe, setTimeframe] = useState('all-time');
   const [category, setCategory] = useState('winnings');
   
