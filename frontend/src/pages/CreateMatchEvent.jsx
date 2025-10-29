@@ -17,10 +17,15 @@ export default function CreateMatchEvent() {
   const fetchMatches = async () => {
     try {
       setLoading(true);
-      const data = await sportsService.getUpcomingMatches(); // Replace with the actual API endpoint
+
+      const leagueId = '4328'; // Replace with a valid default league ID
+      console.log('Fetching matches for league ID:', leagueId);
+
+      const data = await sportsService.getUpcomingMatches(leagueId);
       setMatches(data);
     } catch (error) {
       console.error('Error fetching matches:', error);
+      alert('Failed to fetch matches. Please check the league ID.');
     } finally {
       setLoading(false);
     }
