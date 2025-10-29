@@ -9,6 +9,14 @@ export default function CreateMatchEvent() {
   const { data: walletClient } = useWalletClient();
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [formData, setFormData] = useState({
+    matchId: '',
+    team1: '',
+    team2: '',
+    aiTrashTalk: '',
+    aiPrediction: '',
+    durationSeconds: 3600,
+  });
 
   useEffect(() => {
     fetchMatches();
@@ -31,7 +39,12 @@ export default function CreateMatchEvent() {
     }
   };
 
-  const createMatchEvent = async (match) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const createMatchEvent = async () => {
     try {
       if (!walletClient) {
         alert('Please connect your wallet first.');
@@ -47,12 +60,12 @@ export default function CreateMatchEvent() {
       );
 
       const tx = await contract.createMarket(
-        match.idEvent,
-        match.team1,
-        match.team2,
-        match.aiTrashTalk || '',
-        match.aiPrediction || '',
-        match.durationSeconds || 3600 // Default to 1 hour
+        formData.matchId,
+        formData.team1,
+        formData.team2,
+        formData.aiTrashTalk,
+        formData.aiPrediction,
+        formData.durationSeconds
       );
 
       await tx.wait();
@@ -65,7 +78,67 @@ export default function CreateMatchEvent() {
 
   return (
     <div className="create-match-event-page">
-      <h1>Upcoming Matches</h1>
+      <h1>Create Match Event</h1>
+
+      <div className="form">
+        <label>
+          Match ID:
+          <input
+            type="text"
+            name="matchId"
+            value={formData.matchId}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Team 1:
+          <input
+            type="text"
+            name="team1"
+            value={formData.team1}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Team 2:
+          <input
+            type="text"
+            name="team2"
+            value={formData.team2}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          AI Trash Talk:
+          <input
+            type="text"
+            name="aiTrashTalk"
+            value={formData.aiTrashTalk}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          AI Prediction:
+          <input
+            type="text"
+            name="aiPrediction"
+            value={formData.aiPrediction}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Duration (seconds):
+          <input
+            type="number"
+            name="durationSeconds"
+            value={formData.durationSeconds}
+            onChange={handleInputChange}
+          />
+        </label>
+        <button onClick={createMatchEvent}>Create Event</button>
+      </div>
+
+      <h2>Upcoming Matches</h2>
       {loading ? (
         <p>Loading matches...</p>
       ) : (
@@ -75,7 +148,6 @@ export default function CreateMatchEvent() {
               <h3>{match.team1} vs {match.team2}</h3>
               <p>Date: {new Date(match.dateEvent).toLocaleDateString()}</p>
               <p>Time: {match.strTime}</p>
-              <button onClick={() => createMatchEvent(match)}>Create Event</button>
             </div>
           ))}
         </div>
