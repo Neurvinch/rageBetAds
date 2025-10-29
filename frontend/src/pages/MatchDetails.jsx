@@ -20,6 +20,29 @@ export default function MatchDetails({ match, onBack }) {
     }
   }, [match]);
 
+  // Fetch RAGE token balance when wallet is connected
+  useEffect(() => {
+    const fetchBalance = async () => {
+      if (walletClient) {
+        try {
+          const provider = new ethers.BrowserProvider(window.ethereum);
+          const signer = await provider.getSigner();
+          const rageToken = new ethers.Contract(
+            CONTRACTS.RAGE_TOKEN.address,
+            RageTokenABI,
+            signer
+          );
+          const userAddress = await signer.getAddress();
+          const balance = await rageToken.balanceOf(userAddress);
+          setRageBalance(balance);
+        } catch (error) {
+          console.error('Error fetching RAGE balance:', error);
+        }
+      }
+    };
+    fetchBalance();
+  }, [walletClient]);
+
   const fetchMatchData = async () => {
     try {
       setLoading(true);
