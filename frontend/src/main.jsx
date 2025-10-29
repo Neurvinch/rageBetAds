@@ -21,7 +21,7 @@ const config = getDefaultConfig({
   chains:[sepolia, monadTestnet],
   transports: {
     [sepolia.id] : http("https://worldchain-sepolia.g.alchemy.com/v2/Ljr9rV6foCZ6EDtKt6z-d2Kiy0ahFvLs"),
-    [monadTestnet.id] : http("https://testnet-rpc.monad.xyz")
+    [monadTestnet.id] : http("https://monad-testnet.g.alchemy.com/v2/bBA5Mnb4SmI254K3uqriS")
 
   }
 })
