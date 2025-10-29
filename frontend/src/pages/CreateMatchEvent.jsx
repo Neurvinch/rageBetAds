@@ -31,6 +31,22 @@ export default function CreateMatchEvent() {
 
       const data = await sportsService.getUpcomingMatches(leagueId);
       setMatches(data);
+
+      // Pre-fill the form with the first match's data
+      if (data.length > 0) {
+        const firstMatch = data[0];
+        // Log the first match to verify property names
+        console.log('First match data:', firstMatch);
+
+        setFormData({
+          matchId: firstMatch.idEvent,
+          team1: firstMatch.strHomeTeam || '', // Adjusted property name
+          team2: firstMatch.strAwayTeam || '', // Adjusted property name
+          aiTrashTalk: firstMatch.aiTrashTalk || 'Default AI Trash Talk', // Added default value
+          aiPrediction: firstMatch.aiPrediction || 'Default AI Prediction', // Added default value
+          durationSeconds: 3600, // Default to 1 hour
+        });
+      }
     } catch (error) {
       console.error('Error fetching matches:', error);
       alert('Failed to fetch matches. Please check the league ID.');
