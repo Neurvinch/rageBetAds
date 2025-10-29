@@ -68,7 +68,7 @@ export default function MatchDetails({ match, onBack }) {
 
       console.log('Calling placeBet with:', { marketId, agreeWithAI, amount });
       const tx = await contract.placeBet(
-        1,
+        1n,
         agreeWithAI,
         ethers.parseUnits(amount.toString(), 18)
       );

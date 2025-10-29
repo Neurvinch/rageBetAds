@@ -22,6 +22,36 @@ export default function CreateMatchEvent() {
     fetchMatches();
   }, []);
 
+  useEffect(() => {
+    async function initializeContract() {
+      try {
+        if (walletClient) {
+          const provider = new ethers.BrowserProvider(walletClient);
+          const signer = await provider.getSigner();
+          const contract = new ethers.Contract(
+            CONTRACTS.PREDICTION_MARKET.address,
+            PredictionMarketABI,
+            signer
+          );
+
+          listenForMarketCreated(contract);
+        }
+      } catch (error) {
+        console.error('Error initializing contract:', error);
+      }
+    }
+
+    initializeContract();
+  }, [walletClient]);
+
+  const listenForMarketCreated = (contract) => {
+    contract.on('MarketCreated', (marketId, team1, team2, trashTalk, prediction, duration) => {
+      console.log('New market created:', { marketId, team1, team2, trashTalk, prediction, duration });
+      // Optionally, you can fetch the matches again or update the state to reflect the new market
+      fetchMatches();
+    });
+  };
+
   const fetchMatches = async () => {
     try {
       setLoading(true);

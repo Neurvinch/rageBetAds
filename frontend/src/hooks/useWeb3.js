@@ -115,6 +115,20 @@
 //     }
 //   };
 
+//   // Function to listen for MarketCreated event
+//   const listenForMarketCreated = (contract) => {
+//     contract.on('MarketCreated', (marketId, matchId, team1, team2, aiTrashTalk, endTime) => {
+//       console.log('MarketCreated event detected:', {
+//         marketId: marketId.toString(),
+//         matchId,
+//         team1,
+//         team2,
+//         aiTrashTalk,
+//         endTime: new Date(endTime * 1000).toISOString(),
+//       });
+//     });
+//   };
+
 //   return {
 //     account,
 //     provider,
@@ -126,5 +140,6 @@
 //     disconnect,
 //     switchNetwork,
 //     isConnected: !!account,
+//     listenForMarketCreated,
 //   };
 // }
