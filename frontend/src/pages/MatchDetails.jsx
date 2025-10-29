@@ -237,7 +237,7 @@ export default function MatchDetails({ match, onBack }) {
           {/* Betting Section */}
           <div className="betting-section">
             <h3>🔥 Place Your Bet</h3>
-            <p>Your balance: {balance ? ethers.formatUnits(balance, 18) : '0'} RAGE</p>
+            <p>Your balance: {rageBalance ? ethers.formatUnits(rageBalance, 18) : '0'} RAGE</p>
             <div className="bet-options">
               <button className="bet-option home" onClick={() => handleBet(matchDetails.marketId, true, "0.000000000000001")}>
                 Bet 0.000000000000001 RAGE on {matchDetails.strHomeTeam}
