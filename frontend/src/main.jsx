@@ -20,7 +20,7 @@ const config = getDefaultConfig({
   chains:[sepolia, monadTestnet],
   transports: {
     [sepolia.id] : http("https://worldchain-sepolia.g.alchemy.com/v2/Ljr9rV6foCZ6EDtKt6z-d2Kiy0ahFvLs"),
-    [monadTestnet.id] : http("https://worldchain-sepolia.g.alchemy.com/v2/Ljr9rV6foCZ6EDtKt6z-d2Kiy0ahFvLs")
+    [monadTestnet.id] : http("https://monad-testnet.g.alchemy.com/v2/bBA5Mnb4SmI254K3uqriS")
 
   }
 })
@@ -38,7 +38,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient} >
-        <RainbowKitProvider theme={theme} chains={[sepolia ]}>
+        <RainbowKitProvider theme={theme} chains={[sepolia, monadTestnet]}>
           <App />
         </RainbowKitProvider>
       </QueryClientProvider>
