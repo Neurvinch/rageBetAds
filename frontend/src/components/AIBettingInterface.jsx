@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useWeb3 } from '../hooks/useWeb3';
+// import { useWeb3 } from '../hooks/useWeb3';
+import {useAccount} from 'wagmi';
 import { usePredictionMarket } from '../hooks/useContract';
+import { CONTRACTS } from '../config/contracts';
 import { aiService, nftService } from '../services/apiService';
 
 export default function AIBettingInterface({ matchId, matchData }) {
   console.log('🤖 AIBettingInterface v2.0 rendered with matchId:', matchId);
   
-  const { account, connectWallet } = useWeb3();
+  // const { account, connectWallet } = useWeb3();
+  const{address, isConnected} = useAccount()
   const { 
     placeBet, 
     getTokenBalance,
@@ -28,10 +31,19 @@ export default function AIBettingInterface({ matchId, matchData }) {
   }, [matchId]);
 
   useEffect(() => {
-    if (account) {
+    if (address) {
       loadTokenBalance();
+      // Quick connectivity check: log contract address and market count
+      (async () => {
+        try {
+          const count = await getMarketCount();
+          console.log('🔗 PredictionMarket address:', CONTRACTS.PREDICTION_MARKET.address, 'marketCounter:', count);
+        } catch (err) {
+          console.warn('Connectivity check failed:', err);
+        }
+      })();
     }
-  }, [account]);
+  }, [address]);
 
   const loadAIPrediction = async () => {
     try {
@@ -52,9 +64,26 @@ export default function AIBettingInterface({ matchId, matchData }) {
   };
 
   const handleBet = async (agreeWithAI) => {
-    if (!account) {
-      await connectWallet();
-      return;
+    if (!address) {
+      // Prompt user to connect wallet, then continue the flow automatically
+      alert('Please connect your wallet to place a bet.');
+
+      // Try to read the connected account directly in case state hasn't updated yet
+      try {
+        if (window.ethereum) {
+          const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+          if (accounts && accounts.length > 0) {
+            // proceed with the newly connected account
+            console.log('Wallet connected:', accounts[0]);
+          } else {
+            // user did not connect - stop
+            return;
+          }
+        }
+      } catch (err) {
+        console.error('Error checking connected accounts after connectWallet:', err);
+        return;
+      }
     }
 
     if (!betAmount || betAmount <= 0) {

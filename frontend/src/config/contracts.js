@@ -6,15 +6,15 @@ import RageNFTABI from '../../../contracts/RageNFT.json';
 // Contract addresses from environment variables
 export const CONTRACTS = {
   PREDICTION_MARKET: {
-    address: import.meta.env.VITE_PREDICTION_MARKET_ADDRESS || '0x...',
+    address:  "0x4a41f81fAAB1AAae1679BebC8D727bddf0BdBb63"|| '0x...',
     abi: PredictionMarketABI,
   },
   RAGE_TOKEN: {
-    address: import.meta.env.VITE_RAGE_TOKEN_ADDRESS || '0x...',
+    address: "0x86cD2b561D6977b7A8F4173721a1f17F41996564" || '0x...',
     abi: RageTokenABI,
   },
   RAGE_NFT: {
-    address: import.meta.env.VITE_RAGE_NFT_ADDRESS || '0x...',
+    address: "0xA7D4F40931DaAc0e1B4a29480dE86040262A7102" || '0x...',
     abi: RageNFTABI,
   },
 };

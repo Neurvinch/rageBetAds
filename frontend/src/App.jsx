@@ -3,7 +3,9 @@ import './App.css'
 import './styles/Toast.css'
 import './styles/Profile.css'
 import './styles/Leaderboard.css'
-import WalletConnect from './components/WalletConnect'
+import './styles/FilterPanel.css'
+import './styles/LiveOdds.css'
+import './styles/HeroSection.css'
 import Toast from './components/Toast'
 import Dashboard from './pages/Dashboard'
 import Search from './pages/Search'
@@ -11,6 +13,7 @@ import LeagueStandings from './pages/LeagueStandings'
 import MatchDetails from './pages/MatchDetails'
 import Profile from './pages/Profile'
 import Leaderboard from './pages/Leaderboard'
+import {ConnectButton} from "@rainbow-me/rainbowkit"
 
 function App() {
   const [currentPage, setCurrentPage] = useState('dashboard')
@@ -81,7 +84,7 @@ function App() {
           </button>
         </div>
         <div className="nav-wallet">
-          <WalletConnect />
+         <ConnectButton/>
         </div>
       </nav>
 

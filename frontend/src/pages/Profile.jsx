@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useWeb3 } from '../hooks/useWeb3';
+// import { useWeb3 } from '../hooks/useWeb3';
+import {useAccount} from "wagmi"
 import { toast } from '../components/Toast';
 
 export default function Profile() {
-  const { account, isConnected } = useWeb3();
+  const { isConnected, address } = useAccount();
   const [stats, setStats] = useState({
     totalBets: 0,
     wonBets: 0,
