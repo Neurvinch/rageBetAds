@@ -22,8 +22,14 @@ export default function MatchDetails({ match, onBack }) {
     try {
       setLoading(true);
       const matchDetailsData = await sportsService.getMatchDetails(match.idEvent);
-      
-      setMatchDetails(matchDetailsData || match);
+
+      // Ensure marketId is set
+      const marketId = 1 || matchDetailsData?.marketId || match?.marketId ;
+      if (!marketId) {
+        console.warn('marketId is missing in match details.');
+      }
+
+      setMatchDetails({ ...matchDetailsData, marketId } || match);
       setStats([]); // Stats endpoint not implemented yet
       setTimeline([]); // Timeline endpoint not implemented yet
     } catch (error) {
@@ -60,8 +66,9 @@ export default function MatchDetails({ match, onBack }) {
         return;
       }
 
+      console.log('Calling placeBet with:', { marketId, agreeWithAI, amount });
       const tx = await contract.placeBet(
-        marketId,
+        1,
         agreeWithAI,
         ethers.parseUnits(amount.toString(), 18)
       );
