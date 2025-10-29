@@ -4,6 +4,7 @@ import { useWalletClient } from 'wagmi';
 import { sportsService } from '../services/apiService';
 import { CONTRACTS } from '../config/contracts';
 import PredictionMarketABI from '../../../contracts/PredictionMarket.json';
+import RageTokenABI from '../../../contracts/RageToken.json';
 
 export default function MatchDetails({ match, onBack }) {
   const { data: walletClient } = useWalletClient();
@@ -11,6 +12,7 @@ export default function MatchDetails({ match, onBack }) {
   const [stats, setStats] = useState([]);
   const [timeline, setTimeline] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [rageBalance, setRageBalance] = useState(null);
 
   useEffect(() => {
     if (match) {
@@ -24,7 +26,7 @@ export default function MatchDetails({ match, onBack }) {
       const matchDetailsData = await sportsService.getMatchDetails(match.idEvent);
 
       // Ensure marketId is set
-      const marketId = 1n || matchDetailsData?.marketId || match?.marketId ;
+      const marketId = 2n || matchDetailsData?.marketId || match?.marketId ;
       if (!marketId) {
         console.warn('marketId is missing in match details.');
       }
@@ -60,25 +62,84 @@ export default function MatchDetails({ match, onBack }) {
       );
       console.log('Contract instance created:', contract);
 
+      // Check market status before placing bet
+      const market = await contract.getMarket(marketId);
+      console.log('Market details:', market);
+
+      if (market.resolved) {
+        alert('This market has already been resolved.');
+        return;
+      }
+
+      if (Date.now() / 1000 >= market.endTime) {
+        alert('This market is closed for betting.');
+        return;
+      }
+
       if (!contract.placeBet) {
         console.error('placeBet function is not defined on the contract.');
         alert('Contract method not available. Please check the contract ABI.');
         return;
       }
 
-      console.log('Calling placeBet with:', { marketId, agreeWithAI, amount });
-      const tx = await contract.placeBet(
-        marketId,
-        agreeWithAI,
-        amount
+      // Initialize RageToken contract
+      const rageToken = new ethers.Contract(
+        CONTRACTS.RAGE_TOKEN.address,
+        RageTokenABI,
+        signer
       );
-      console.log('Transaction sent:', tx);
 
-      if (!tx || !tx.wait) {
-        console.error('Transaction object is invalid or missing the wait method:', tx);
-        alert('Invalid transaction object. Please check the contract interaction.');
+      // Convert amount to RAGE token units (18 decimals)
+      const amountInRage = ethers.parseUnits(amount.toString(), 18);
+      console.log('Amount in RAGE:', amountInRage);
+
+      // Check RAGE token balance
+      const userAddress = await signer.getAddress();
+      const balance = await rageToken.balanceOf(userAddress);
+      setRageBalance(balance);
+      console.log('Balance check:', {
+        userAddress,
+        balance: balance.toString(),
+        balanceInEther: ethers.formatUnits(balance, 18),
+        amountInRage: amountInRage.toString(),
+        amountInEther: ethers.formatUnits(amountInRage, 18),
+      });
+      
+      if (balance < amountInRage) {
+        alert(`Insufficient RAGE token balance. You have ${ethers.formatUnits(balance, 18)} RAGE, but need ${ethers.formatUnits(amountInRage, 18)} RAGE`);
         return;
       }
+
+      // Check if contract is approved to spend RAGE tokens
+      const allowance = await rageToken.allowance(await signer.getAddress(), CONTRACTS.PREDICTION_MARKET.address);
+      console.log('Current allowance:', allowance);
+
+      if (allowance < amountInRage) {
+        console.log('Approving RAGE tokens...');
+        const approveTx = await rageToken.approve(CONTRACTS.PREDICTION_MARKET.address, ethers.MaxUint256);
+        await approveTx.wait();
+        console.log('Approval confirmed');
+      }
+
+      console.log('Calling placeBet with:', { marketId, agreeWithAI, amountInRage });
+
+      // Estimate gas first to check if the transaction will fail
+      try {
+        await contract.placeBet.estimateGas(marketId, agreeWithAI, amountInRage);
+      } catch (gasError) {
+        const errorMessage = gasError.message.toLowerCase();
+        if (errorMessage.includes('market closed')) {
+          alert('This market is closed for betting.');
+        } else if (errorMessage.includes('already placed bet')) {
+          alert('You have already placed a bet on this market.');
+        } else {
+          alert(`Transaction will fail: ${gasError.message}`);
+        }
+        return;
+      }
+
+      const tx = await contract.placeBet(marketId, agreeWithAI, amountInRage);
+      console.log('Transaction sent:', tx, { marketId, agreeWithAI, amountInRage });
 
       await tx.wait();
       console.log('Transaction confirmed:', tx);
@@ -92,7 +153,21 @@ export default function MatchDetails({ match, onBack }) {
         amount,
         contractAddress: CONTRACTS.PREDICTION_MARKET.address,
       });
-      alert(`Failed to place bet: ${error.message || 'Unknown error'}`);
+
+      // Parse the error message for user-friendly display
+      let errorMessage = 'Unknown error occurred';
+      if (error.message) {
+        if (error.message.includes('Market closed')) {
+          errorMessage = 'This market is closed for betting';
+        } else if (error.message.includes('Already placed bet')) {
+          errorMessage = 'You have already placed a bet on this market';
+        } else if (error.message.includes('insufficient funds')) {
+          errorMessage = 'Insufficient funds to place this bet';
+        } else {
+          errorMessage = error.message;
+        }
+      }
+      alert(`Failed to place bet: ${errorMessage}`);
     }
   };
 
@@ -162,15 +237,16 @@ export default function MatchDetails({ match, onBack }) {
           {/* Betting Section */}
           <div className="betting-section">
             <h3>🔥 Place Your Bet</h3>
+            <p>Your balance: {balance ? ethers.formatUnits(balance, 18) : '0'} RAGE</p>
             <div className="bet-options">
-              <button className="bet-option home" onClick={() => handleBet(matchDetails.marketId, true, 10)}>
-                Bet on {matchDetails.strHomeTeam}
+              <button className="bet-option home" onClick={() => handleBet(matchDetails.marketId, true, "0.000000000000001")}>
+                Bet 0.000000000000001 RAGE on {matchDetails.strHomeTeam}
               </button>
-              <button className="bet-option draw" onClick={() => handleBet(matchDetails.marketId, false, 10)}>
-                Bet on Draw
+              <button className="bet-option draw" onClick={() => handleBet(matchDetails.marketId, false, "0.000000000000001")}>
+                Bet 0.000000000000001 RAGE on Draw
               </button>
-              <button className="bet-option away" onClick={() => handleBet(matchDetails.marketId, false, 10)}>
-                Bet on {matchDetails.strAwayTeam}
+              <button className="bet-option away" onClick={() => handleBet(matchDetails.marketId, false, "0.000000000000001")}>
+                Bet 0.000000000000001 RAGE on {matchDetails.strAwayTeam}
               </button>
             </div>
           </div>
